@@ -1,12 +1,27 @@
 /* email-preview  */
+.email-preview{
+  border: 1px solid rgb(189, 180, 180);
+
+  padding: 3px;
+  margin-bottom: 1px;
+}
+.email-preview:hover{
+  opacity: 0.45;
+}
+
 .email-preview button {
   background-color: unset;
   border: 0;
   cursor: pointer;
 }
-.email-preview button:hover {
-  opacity: 0.3;
-}
+
 .email-preview button img{
-width: 30px;
+width: 20px;
+}
+.email-preview button img:hover{
+filter: invert(0.9);
+}
+li.email-preview {
+  display: flex;
+  justify-content: space-between;
 }

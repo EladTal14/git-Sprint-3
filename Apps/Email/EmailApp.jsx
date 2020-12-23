@@ -46,12 +46,18 @@ export class EmailApp extends React.Component {
     const emailsForDisplay = this.emailsForDisplay
     const { isComopse } = this.state
     return <section className="email-app ">
-      <EmailFilter setFilter={this.onSetFilter} />
-      <button onClick={this.onComposeEmail}>Compose</button>
-
-      {isComopse && <EmailCompose composeEmail={this.onComposeEmail} addNewEmail={this.onAddNewEmail} />}
-      <EmailList emails={emailsForDisplay} />
-
+      <div className="main-content flex">
+        <div className="actions-filters flex column space-between">
+          <EmailFilter setFilter={this.onSetFilter} />
+          <button className="compose" onClick={this.onComposeEmail}><img src="../../../assets/css/apps/mail/img/compose-btn.png" /><span>Compose</span> </button>
+          <a>Starred</a>
+          <a>Sent Mail</a>
+          <a>Drafts</a>
+          <a>bar</a>
+        </div>
+        {isComopse && <EmailCompose composeEmail={this.onComposeEmail} addNewEmail={this.onAddNewEmail} />}
+        <EmailList emails={emailsForDisplay} />
+      </div>
     </section>
   }
 }
