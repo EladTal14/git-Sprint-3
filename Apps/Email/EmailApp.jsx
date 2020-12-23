@@ -1,6 +1,6 @@
 import { MissEmail } from "./cmps/MissEmail.jsx";
 
-export class MissEmail extends React.Component {
+export class EmailApp extends React.Component {
 
   render() {
     return <section className="email-app">
