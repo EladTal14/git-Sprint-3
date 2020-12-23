@@ -1,6 +1,9 @@
 @import '../../lib/animate.css';
 /* Basics */
 @import './basics/base.css';
+@import './basics/fonts.css';
+@import './basics/About.css';
+@import './basics/MainNav.css';
 
 /* Components */
 

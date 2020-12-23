@@ -7,7 +7,7 @@ export class UserMsg extends React.Component {
   render() {
     return (
       <header>
-        <h1>Msg</h1>
+        {/* <h1>Msg</h1> */}
       </header>
     )
   }
