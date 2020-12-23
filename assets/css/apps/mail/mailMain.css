@@ -2,9 +2,7 @@
 @import './cmps/emailPreview.css';
 @import './cmps/emailApp.css';
 @import './cmps/emailList.css';
-body{
-  background-color: rgb(95, 82, 82);
-}
+
 
 .is-read{
   background-color: rgb(131, 125, 125);
