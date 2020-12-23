@@ -7,3 +7,12 @@ body{
 .debug *{
   outline: 1px solid orange;
 }
+.flex{
+  display: flex;
+}
+.column{
+  flex-direction: column;
+}
+.space-between{
+  justify-content: space-between;
+}
