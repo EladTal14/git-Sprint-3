@@ -4,5 +4,6 @@
 
 /* Components */
 
-@import './apps/keep/keepMain.css'
+@import './apps/keep/keepMain.css';
+@import './apps/mail/mailMain.css'
 

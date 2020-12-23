@@ -1,11 +1,17 @@
 
+const { Link } = ReactRouterDOM;
+export function EmailPreview({ email }) {
 
-export class EmailPreview extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>Email Prev</h1>
-      </div>
-    )
-  }
+
+  return (
+    <Link to={`/email/${email.id}`}>
+
+      <li className="email-preview">
+        <span>{email.subject} </span><span>{email.body}</span>
+
+      </li>
+
+    </Link>
+  )
+
 }
