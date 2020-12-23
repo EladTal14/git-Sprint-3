@@ -1,0 +1,12 @@
+/* email-preview  */
+.email-preview button {
+  background-color: unset;
+  border: 0;
+  cursor: pointer;
+}
+.email-preview button:hover {
+  opacity: 0.3;
+}
+.email-preview button img{
+width: 30px;
+}

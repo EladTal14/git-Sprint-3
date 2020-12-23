@@ -23,6 +23,7 @@ export class EmailFilter extends React.Component {
           value={this.props.subject}
           placeholder="Search mail"
           autoComplete="off"
+          autoFocus
           onChange={this.handleChange} />
       </section>
     )

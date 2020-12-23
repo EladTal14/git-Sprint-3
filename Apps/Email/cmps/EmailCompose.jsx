@@ -10,17 +10,17 @@ export class EmailCompose extends React.Component {
       userTxt: ''
     }
   }
-  componentDidMount() {
-    this.setState({
-      email: {
-        sendTo: '',
-        cc: '',
-        bcc: '',
-        subject: '',
-        body: ''
-      }
-    })
-  }
+  // componentDidMount() {
+  //   this.setState({
+  //     email: {
+  //       sendTo: '',
+  //       cc: '',
+  //       bcc: '',
+  //       subject: '',
+  //       body: ''
+  //     }
+  //   })
+  // }
   addEmail = (ev) => {
     ev.preventDefault();
     console.log(this.state.email);
@@ -45,15 +45,14 @@ export class EmailCompose extends React.Component {
 
         </header>
         <form className="flex column" onSubmit={this.addEmail}>
-          <input type="text" placeholder="To" name="sendTo" value={email.sendTo} onChange={this.handleChange} autoFocus />
+          <input type="text" placeholder="To" name="sendTo" value={email.sendTo} onChange={this.handleChange} autoFocus required />
           <input type="text" placeholder="CC" name="cc" value={email.cc} onChange={this.handleChange} />
           <input type="text" placeholder="BCC" name="bcc" value={email.bcc} onChange={this.handleChange} />
           <input type="text" placeholder="Subject" name="subject" value={email.subject} onChange={this.handleChange} />
-          <textarea name="" id="" cols="50" rows="20" name="body" value={email.body} onChange={this.handleChange}></textarea>
+          <textarea name="" id="" cols="50" rows="20" name="body" value={email.body} onChange={this.handleChange} required></textarea>
           <div className="actions flex space-between">
             <button type="submit" className="btn-box btn-gradient btn-pos">Send</button>
-            <a><img src="../../../assets/css/apps/mail/img/trash.png" alt="" /></a>
-
+            <a onClick={this.props.composeEmail}><img src="../../../assets/css/apps/mail/img/trash.png" alt="" /></a>
           </div>
         </form>
 

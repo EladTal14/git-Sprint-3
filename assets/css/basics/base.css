@@ -16,3 +16,6 @@ body{
 .space-between{
   justify-content: space-between;
 }
+.clean-list{
+  list-style-type:none;
+}
