@@ -15,7 +15,6 @@ export function RootCmp() {
     return (
         <Router>
             <section className="appsus">
-                <h1>My App</h1>
                 <MainNav />
                 <UserMsg />
                 <Switch>

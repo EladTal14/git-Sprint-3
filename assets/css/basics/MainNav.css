@@ -1,0 +1,27 @@
+.main-header{
+    height: 100px;
+    background-color: #52616b;
+    color: white;
+    padding: 5px 10px;
+    align-items: center
+}
+
+
+.nav-list{
+    margin-right: 10px;
+    width: 400px;
+    justify-content: space-between;
+}
+
+.nav-list a{
+    color: white;
+}
+
+.main-header h1{
+    margin: 0 5px;
+    font-size: 1.5rem;
+}
+
+.main-header img{
+    width: 100px;
+}

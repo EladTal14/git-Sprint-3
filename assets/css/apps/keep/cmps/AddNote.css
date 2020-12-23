@@ -2,12 +2,12 @@
     background-color: unset;
     border: 0;
     cursor: pointer;
-    /* opacity: 0.3; */
+    opacity: 0.3;
 }
 
-/* .note-form button:active ::before{
-    opacity: 0.3;
-} */
+.note-form button:active{
+    opacity: 1;
+}
 
 .note-form img {
     width: 30px;
