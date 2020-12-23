@@ -4,6 +4,7 @@ import { utilService } from '../../../services/utilService.js';
 const KEY = 'notesDB'
 export const keepService = {
     query,
+    addNote,
     // remove,
     // save,
     // getById,
@@ -20,6 +21,31 @@ function _createNotes() {
         gNotes = _getDemoNotes()
         _saveNotesToStorage();
     }
+}
+
+function addNote(newNote){
+    console.log('adding new note', newNote);
+    var newInfo = {}
+    switch (newNote.type){
+        case "NoteText":
+            newInfo.txt = newNote.note
+            break;
+        case "NoteImg" || "NoteVideo":
+            newInfo.url = newNote.note
+            break;
+        case "NoteTodos":
+            var todosTxt = newNote.note.split(',')
+            newInfo.todos = todosTxt.reduce((acc, todo) => {
+                acc.push({txt: todo, doneAt: null})
+                return acc
+            }, [])
+            break
+    }
+    const newNoteToAdd = {id:utilService.makeId(), type: newNote.type, info: newInfo}
+    gNotes = [newNoteToAdd, ...gNotes]
+    console.log(newInfo)
+    _saveNotesToStorage()
+    return Promise.resolve(gNotes)
 }
 
 function query() {

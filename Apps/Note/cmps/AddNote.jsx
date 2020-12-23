@@ -2,31 +2,53 @@
 export class AddNote extends React.Component {
 
   state = {
-    note: '',
-    inputProps: {
-      inputValue: '',
-      inputName: '',
-      inputPlaceholder: 'What\'s on your mind...'
+    txt: 'What\'s on your mind...',
+    newCmp: {
+      note: '',
+      type: '',
     }
   }
 
-  onSaveNote = () =>{
-    console.log(this.state.note);
+  onAddNote = (ev) => {
+    ev.preventDefault();
+    this.props.addNote(this.state.newCmp)
   }
 
+  onInputChange = (ev) => {
+    const value = ev.target.value;
+    const field = ev.target.name
+    const copyCmp = { ...this.state.newCmp, [field]: value }
+    this.setState({ newCmp: copyCmp })
+
+  }
+
+  onChangeType = (noteType, placeholderTxt) => {
+    const copyCmp = {...this.state.newCmp}
+    copyCmp.type = noteType
+    this.setState({
+      newCmp: copyCmp,
+      txt: placeholderTxt,
+    })
+  }
+
+
   render() {
-    const { inputValue, inputName, inputPlaceholder } = this.state.inputProps
+    const {note} = this.state.newCmp
     return (
-    //   <form onSubmit={this.onSaveNote}>
+      <section className="note-form">
+        <form onSubmit={this.onAddNote}>
 
-    //     <input value={this.state.pet.name} ref={this.refInput}
-    //       placeholder="Name" type="text" name="name"
-    //       onChange={this.onInputChange} />
+          <input value={note} placeholder={this.state.txt} type="text" name="note"
+            onChange={this.onInputChange} />
 
-    //     <button>A</button>
-    //     <button type="submit">Add</button>
-    //   </form>
-    // )
-    <h1>add </h1>)
+          <button type="button" onClick={() => this.onChangeType('NoteText', 'What\'s on your mind...')}><img src="../../../assets/css/apps/keep/img/txt.png" alt="" /  ></button>
+          <button type="button" onClick={() => this.onChangeType('NoteImg', 'Enter image url' )}><img src="../../../assets/css/apps/keep/img/picture.png" alt="" /></button>
+          <button type="button" onClick={() => this.onChangeType('NoteVideo', 'Enter video url')}><img src="../../../assets/css/apps/keep/img/video.png" alt="" /></button>
+          <button type="button" onClick={() => this.onChangeType('NoteTodos', 'Enter comma separated list')}><img src="../../../assets/css/apps/keep/img/list.png" alt="" /></button>
+          <button type="submit">Add</button>
+        </form>
+
+      </section>
+    )
   }
 }

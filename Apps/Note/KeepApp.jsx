@@ -19,6 +19,11 @@ loadNotes = () => {
       .then(notes => this.setState({ notes }, ()=> console.log(notes)))
 }
 
+addNote = (note) => {
+  keepService.addNote(note)
+    .then(notes => this.setState({notes}))
+}
+
 get notesToDisplay() {
   const {notes} = this.state
   return notes
@@ -28,7 +33,7 @@ get notesToDisplay() {
     const notesToShow = this.notesToDisplay
     return <section className="keep-app">
       <h1>Your Notes!</h1>
-      <AddNote />
+      <AddNote addNote={this.addNote}/>
       <NotesList notes={notesToShow} />
     </section>
 
