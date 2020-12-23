@@ -1,0 +1,9 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+.debug *{
+  outline: 1px solid orange;
+}
