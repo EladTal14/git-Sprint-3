@@ -1,7 +1,7 @@
 
 
 
-export class Home extends React.Component {
+export class HomePage extends React.Component {
 
     state = {
 

@@ -1,6 +1,6 @@
-import {App} from './root-cmp.jsx'
+import { RootCmp } from './RootCmp.jsx'
 
 ReactDOM.render(
-    <App/>,
+    <RootCmp />,
     document.getElementById('root')
 )
