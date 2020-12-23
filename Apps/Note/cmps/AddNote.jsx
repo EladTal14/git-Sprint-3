@@ -17,15 +17,16 @@ export class AddNote extends React.Component {
   render() {
     const { inputValue, inputName, inputPlaceholder } = this.state.inputProps
     return (
-      <form onSubmit={this.onSaveNote}>
+    //   <form onSubmit={this.onSaveNote}>
 
-        <input value={this.state.pet.name} ref={this.refInput}
-          placeholder="Name" type="text" name="name"
-          onChange={this.onInputChange} />
+    //     <input value={this.state.pet.name} ref={this.refInput}
+    //       placeholder="Name" type="text" name="name"
+    //       onChange={this.onInputChange} />
 
-        <button>A</button>
-        <button type="submit">Add</button>
-      </form>
-    )
+    //     <button>A</button>
+    //     <button type="submit">Add</button>
+    //   </form>
+    // )
+    <h1>add </h1>)
   }
 }
