@@ -1,7 +1,12 @@
 import { AddNote } from "./cmps/AddNote.jsx";
-import { NoteList } from "./cmps/NoteList.jsx";
+import { NotesList } from "./cmps/NoteList.jsx";
+import {keepService} from "./services/keepService.js"
 
-export class MissEmail extends React.Component {
+export class KeepApp extends React.Component {
+
+  state = {
+    notes: [],
+  }
 
   componentDidMount() {
     console.log('Page is ready');
@@ -9,11 +14,22 @@ export class MissEmail extends React.Component {
 
 }
 
+loadNotes = () => {
+  keepService.query()
+      .then(notes => this.setState({ notes }, ()=> console.log(notes)))
+}
+
+get notesToDisplay() {
+  const {notes} = this.state
+  return notes
+}
+
   render() {
+    const notesToShow = this.notesToDisplay
     return <section className="keep-app">
-      <h1>Miss Keep App</h1>
+      <h1>Your Notes!</h1>
       <AddNote />
-      <NoteList />
+      <NotesList notes={notesToShow} />
     </section>
 
   }

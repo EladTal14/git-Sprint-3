@@ -1,5 +1,5 @@
-import { storageService } from './storageService.js';
-import { utilService } from './utilService.js';
+import { storageService } from '../../../services/storage-service.js';
+import { utilService } from '../../../services/utilService.js';
 
 const KEY = 'notesDB'
 export const keepService = {
@@ -36,15 +36,23 @@ function _getDemoNotes() {
                 txt: "Fullstack Me Baby!"
             }
         },
+        {   
+            id: utilService.makeId(),
+            type: "NoteText",
+            isPinned: true,
+            info: {
+                txt: "I miss the summer!!"
+            }
+        },
         {
             id: utilService.makeId(),
             type: "NoteImg",
             info: {
-                url: "http://some-img/me",
+                url: 'https://miro.medium.com/max/1050/0*LFS-oAro8b1qmeH9.jpg',
                 title: "Me playing Mi"
             },
             style: {
-                backgroundColor: "#00d"
+                backgroundColor: "lightpink"
             }
         },
         {
@@ -62,8 +70,8 @@ function _getDemoNotes() {
             id: utilService.makeId(),
             type: "NoteVideo",
             info: {
-                url: "http://some-video/me",
-                title: "Me playing Mi"
+                url: 'https://www.youtube.com/watch?v=BjhW3vBA1QU',
+                title: "My new favorit song"
             },
             style: {
                 backgroundColor: "#00d"
