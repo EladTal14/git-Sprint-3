@@ -21,7 +21,7 @@ function _createEmails() {
     // Nothing in localStorage, use demo data
     emails = _demoEmails();
     _saveEmailsToStorage();
-    return Promise.resolve(email);
+    return Promise.resolve(emails);
   }
 }
 function changeReadUnread(emailId) {

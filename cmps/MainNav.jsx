@@ -6,7 +6,7 @@ export function MainNav() {
 
     <nav className="main-header flex space-between">
       <div className="left-header flex">
-        <img src="../assets/css/apps/keep/img/unicorn.png" alt="" />
+        <img src="./assets/css/apps/keep/img/unicorn.png" alt="" />
         <h1>Appsus</h1>
       </div>
       <ul className="nav-list clean-list flex">
