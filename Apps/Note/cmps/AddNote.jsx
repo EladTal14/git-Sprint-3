@@ -39,7 +39,7 @@ export class AddNote extends React.Component {
         <form onSubmit={this.onAddNote}>
 
           <input value={note} placeholder={this.state.txt} type="text" name="note"
-            className="new-note-input" onChange={this.onInputChange} />
+            className="new-note-input" onChange={this.onInputChange}  autoComplete="off"/>
 
           <button type="button" onClick={() => this.onChangeType('NoteText', 'What\'s on your mind...')}><img src="../../../assets/css/apps/keep/img/txt.png" alt="" /></button>
           <button type="button" onClick={() => this.onChangeType('NoteImg', 'Enter image url' )}><img src="../../../assets/css/apps/keep/img/picture.png" alt="" /></button>

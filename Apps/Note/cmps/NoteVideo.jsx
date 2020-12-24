@@ -25,14 +25,14 @@ export class NoteVideo extends React.Component {
   render() {
     const { color } = this.state
     const {id} = this.props
-    const { url, title} = this.props.info
+    const { url, txt} = this.props.info
 
     return (
       <div className="video-note note-card" style={{ backgroundColor: color }}>
         <iframe width="260" height="230"
           src={ url }>
         </iframe>
-        <h3>{title}</h3>
+        <h3>{txt}</h3>
         <div className="note-icons">
           <button><img src="../../../assets/css/apps/keep/img/video.png" alt="" /></button>
           <button><img src="../../../assets/css/apps/keep/img/pin.png" alt="" /></button>
