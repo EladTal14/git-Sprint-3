@@ -43,8 +43,8 @@ export class EmailPreview extends React.Component {
           <span>{email.sendTo} </span><span>{email.body}</span>
           <div className="time-and-actions">
             <span>{time}</span>
-            <button onClick={this.onRead}><img src={`${(isRead) ? "./../../assets/css/apps/mail/img/mail-read.png"
-              : "./../../assets/css/apps/mail/img/mail-un-read.png"
+            <button onClick={this.onRead}><img src={`${(isRead) ? "./assets/css/apps/mail/img/mail-read.png"
+              : "./assets/css/apps/mail/img/mail-un-read.png"
               }`} alt="" /></button>
           </div>
         </li>

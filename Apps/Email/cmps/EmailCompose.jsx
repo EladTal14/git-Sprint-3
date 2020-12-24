@@ -42,7 +42,7 @@ export class EmailCompose extends React.Component {
           <textarea name="" id="" cols="50" rows="20" name="body" value={email.body} onChange={this.handleChange} required></textarea>
           <div className="actions flex space-between">
             <button type="submit" className="btn-box btn-gradient btn-pos">Send</button>
-            <a onClick={this.props.composeEmail}><img src="../../../assets/css/apps/mail/img/trash.png" alt="" /></a>
+            <a onClick={this.props.composeEmail}><img src="./assets/css/apps/mail/img/trash.png" alt="" /></a>
           </div>
         </form>
 

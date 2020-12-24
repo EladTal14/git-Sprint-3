@@ -30,7 +30,7 @@ export class NoteTodos extends React.Component {
   onToggleTodo = (todoId) => {
     var todo = this.state.todos.find(todo => todo.id === todoId)
     todo.isDone = !todo.isDone
-    this.setState({todos: [...this.state.todos]})
+    this.setState({ todos: [...this.state.todos] })
   }
 
   render() {
@@ -47,10 +47,10 @@ export class NoteTodos extends React.Component {
           })}
         </ul>
         <div className="note-icons">
-          <button><img src="../../../assets/css/apps/keep/img/list.png" alt="" /></button>
-          <button><img src="../../../assets/css/apps/keep/img/pin.png" alt="" /></button>
+          <button><img src="./assets/css/apps/keep/img/list.png" alt="" /></button>
+          <button><img src="./assets/css/apps/keep/img/pin.png" alt="" /></button>
           <button className="color-btn"><input className="change-color" type="color" onChange={this.onInputChange} name="color" /></button>
-          <button onClick={() => this.onDeleteNote(id)}><img src="../../../assets/css/apps/keep/img/trash.png" alt="" /></button>
+          <button onClick={() => this.onDeleteNote(id)}><img src="./assets/css/apps/keep/img/trash.png" alt="" /></button>
         </div>
       </div>
     )
