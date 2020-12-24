@@ -32,7 +32,6 @@ function changeReadUnread(emailId) {
 function getById(emailId) {
   const emailNoSpace = emailId;
   const email = emails.find(email => email.id === emailNoSpace);
-
   return Promise.resolve(email);
 }
 
