@@ -14,7 +14,7 @@
   background-color: unset;
   border: 0;
   cursor: pointer;
-  
+   outline: 0; 
 }
 
 .email-preview button img{

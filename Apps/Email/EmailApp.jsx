@@ -10,7 +10,8 @@ export class EmailApp extends React.Component {
       name: '',
       isRead: null
     },
-    isComopse: false
+    isComopse: false,
+    isListShow: true
   }
   componentDidMount() {
     this.loadEmails();
@@ -47,9 +48,17 @@ export class EmailApp extends React.Component {
       .then(() => this.loadEmails())
 
   }
+  onEditEmail = () => {
+
+
+    this.setState({
+      isListShow: !this.state.isListShow
+    })
+
+  }
   render() {
     const emailsForDisplay = this.emailsForDisplay
-    const { isComopse } = this.state
+    const { isComopse, isListShow } = this.state
     return <section className="email-app ">
       <EmailFilter setFilter={this.onSetFilter} />
       <div className="main-content flex">
@@ -61,7 +70,7 @@ export class EmailApp extends React.Component {
           <a>bar</a>
         </div>
         {isComopse && <EmailCompose composeEmail={this.onComposeEmail} addNewEmail={this.onAddNewEmail} />}
-        <EmailList emails={emailsForDisplay} />
+        {isListShow && <EmailList emails={emailsForDisplay} editEmail={this.onEditEmail} />}
       </div>
     </section>
   }

@@ -1,12 +1,12 @@
 
 import { EmailPreview } from "./EmailPreview.jsx";
-export function EmailList({ emails }) {
+export function EmailList({ emails, editEmail }) {
 
   return (
     <section className="email-list">
       <ul className="clean-list flex column ">
         {emails.map(email => {
-          return <EmailPreview key={email.id} email={email} />
+          return <EmailPreview key={email.id} email={email} editEmail={editEmail} />
         })
         }
       </ul>

@@ -7,15 +7,17 @@ export class EmailPreview extends React.Component {
   }
   componentDidMount() {
     this.setState({
-      isRead: this.props.email.isRead
+      isRead: this.props.email.isRead,
+
     })
     this.setState({
       time: this.onTime()
     })
+
   }
   onRead = (ev) => {
-    console.log(ev);
     ev.preventDefault()
+    ev.stopPropagation()
     this.setState({
       isRead: !this.state.isRead
     })
@@ -23,14 +25,20 @@ export class EmailPreview extends React.Component {
   onTime = () => {
     return utilService.changeStampToDate(this.props.email.sentAt)
   }
+  editEmail = (ev) => {
 
+
+    ev.preventDefault();
+    this.props.editEmail()
+  }
   render() {
     const { email } = this.props
     const { isRead } = this.state
     const { time } = this.state
+    // const { editEmail } = this.props
     return (
-      <Link to={`/email/${email.id}`}>
 
+      <Link to={`/email/${email.id} `} onClick={this.editEmail} >
         <li className={`${(isRead) ? "is-read" : ''} email-preview `}>
           <span>{email.subject} </span><span>{email.body}</span>
           <div className="time-and-actions">

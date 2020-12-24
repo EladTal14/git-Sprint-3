@@ -36,7 +36,7 @@ function addEmailToInbox(email) {
 
 function _demoEmails() {
   const emails = [
-    { id: utilService.makeId(), subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: 1551133930594 },
+    { id: utilService.makeId(), subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: 1608791237884 },
     { id: utilService.makeId(), subject: 'hello dear alan', body: 'have you being eating well ', isRead: true, sentAt: 1551133930594 },
     { id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: false, sentAt: 1563133930594 },
     { id: utilService.makeId(), subject: 'Come Back to Instagram', body: 'we miss you at insta come look at new pics of your friends', isRead: false, sentAt: 1561133930594 },

@@ -24,12 +24,11 @@ function changeStampToDate(timeStamp) {
     if (days > 0) {
         let date = notMilliSecTime.toLocaleString("en-US", { weekday: "short" });
         date += ' ' + notMilliSecTime.toLocaleString("en-US", { month: "short" });
-        console.log(date);
         return date;
     }
     if (hours > 0) {
         let date = (hours < 10) ? '0' + hours : hours;
-        date += ':'(minutes < 10) ? '0' + minutes : minutes;
+        date += (minutes < 10) ? ':0' + minutes : ':' + minutes;
         return date;
     }
     else {
