@@ -1,6 +1,6 @@
 
 export class NoteImg extends React.Component {
-  
+
   state = {
     color: 'lightpink',
     // txt: ''
@@ -24,19 +24,19 @@ export class NoteImg extends React.Component {
   }
 
   render() {
-    const {color} = this.state
-    const {id} = this.props
-    const {url, txt} = this.props.info
+    const { color } = this.state
+    const { id } = this.props
+    const { url, txt } = this.props.info
 
     return (
-      <div className="img-note note-card" style={{backgroundColor:color}}>
-        <img src={url} alt=""/>
+      <div className="img-note note-card" style={{ backgroundColor: color }}>
+        <img src={url} alt="" />
         <h3>{txt}</h3>
         <div className="note-icons">
-          <button><img src="../../../assets/css/apps/keep/img/picture.png" alt="" /></button>
-          <button><img src="../../../assets/css/apps/keep/img/pin.png" alt="" /></button>
-          <button className="color-btn"><input className="change-color" type="color" onChange={this.onInputChange} name="color"/></button>
-          <button onClick={() => this.onDeleteNote(id)}><img src="../../../assets/css/apps/keep/img/trash.png" alt="" /></button>
+          <button><img src="./assets/css/apps/keep/img/picture.png" alt="" /></button>
+          <button><img src="./assets/css/apps/keep/img/pin.png" alt="" /></button>
+          <button className="color-btn"><input className="change-color" type="color" onChange={this.onInputChange} name="color" /></button>
+          <button onClick={() => this.onDeleteNote(id)}><img src="./assets/css/apps/keep/img/trash.png" alt="" /></button>
         </div>
       </div>
     )

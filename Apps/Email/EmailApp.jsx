@@ -70,7 +70,7 @@ export class EmailApp extends React.Component {
       <EmailSort setSort={this.onSetSort} />
       <div className="main-content flex">
         <div className="actions-filters flex column space-between">
-          <button className="compose" onClick={this.onComposeEmail}><img src="../../../assets/css/apps/mail/img/compose-btn.png" /><span>Compose</span> </button>
+          <button className="compose" onClick={this.onComposeEmail}><img src="./assets/css/apps/mail/img/compose-btn.png" /><span>Compose</span> </button>
           <a>Starred</a>
           <a>Sent Mail</a>
           <a>Drafts</a>

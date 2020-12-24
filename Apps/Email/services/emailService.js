@@ -21,7 +21,7 @@ function _createEmails() {
     // Nothing in localStorage, use demo data
     emails = _demoEmails();
     _saveEmailsToStorage();
-    return Promise.resolve(email);
+    return Promise.resolve(emails);
   }
 }
 function changeReadUnread(emailId) {
@@ -32,7 +32,6 @@ function changeReadUnread(emailId) {
 function getById(emailId) {
   const emailNoSpace = emailId;
   const email = emails.find(email => email.id === emailNoSpace);
-
   return Promise.resolve(email);
 }
 
