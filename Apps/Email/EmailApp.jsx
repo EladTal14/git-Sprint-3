@@ -12,8 +12,8 @@ export class EmailApp extends React.Component {
       option: 'sendTo'
     },
     sortBy: {
-      date: '',
-      title: ''
+      sort: ''
+
     },
 
     isRead: null,
