@@ -3,7 +3,7 @@
 export class EmailFilter extends React.Component {
   state = {
     filterBy: {
-      option: 'name',
+      option: 'sendTo',
       txt: '',
     },
 
@@ -18,9 +18,8 @@ export class EmailFilter extends React.Component {
     this.setState({ filterBy }, callback);
   };
 
-
   render() {
-
+    console.log(this.state.filterBy);
     return (
       <section className="filter">
         <input type="text" name="txt"
@@ -31,9 +30,9 @@ export class EmailFilter extends React.Component {
           className="filter-by-name"
           onChange={this.handleChange} />
         <select name="option" id="" value={this.state.filterBy.option} onChange={this.handleChange}>
-          <option value="name">name</option>
-          <option value="read">read</option>
-          <option value="unread">unread</option>
+          <option value="sendTo">Sent To</option>
+          <option value="isRead">Read</option>
+          <option value="unRead">Unread</option>
         </select>
       </section>
     )

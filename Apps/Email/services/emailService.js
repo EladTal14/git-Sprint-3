@@ -6,6 +6,7 @@ export const emailService = {
   addEmailToInbox,
   getById,
   removeEmail,
+  changeReadUnread,
 }
 
 
@@ -20,9 +21,14 @@ function _createEmails() {
     // Nothing in localStorage, use demo data
     emails = _demoEmails();
     _saveEmailsToStorage();
+    return Promise.resolve(email);
   }
 }
-
+function changeReadUnread(emailId) {
+  const emailIdx = emails.findIndex(email => email.id === emailId)
+  emails[emailIdx].isRead = !emails[emailIdx].isRead
+  _saveEmailsToStorage();
+}
 function getById(emailId) {
   const emailNoSpace = emailId;
   const email = emails.find(email => email.id === emailNoSpace);
