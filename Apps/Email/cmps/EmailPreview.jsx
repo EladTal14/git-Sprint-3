@@ -26,21 +26,17 @@ export class EmailPreview extends React.Component {
     return utilService.changeStampToDate(this.props.email.sentAt)
   }
   editEmail = (ev) => {
-
-
-    ev.preventDefault();
     this.props.editEmail()
   }
   render() {
     const { email } = this.props
     const { isRead } = this.state
     const { time } = this.state
-    // const { editEmail } = this.props
     return (
 
       <Link to={`/email/${email.id} `} onClick={this.editEmail} >
         <li className={`${(isRead) ? "is-read" : ''} email-preview `}>
-          <span>{email.subject} </span><span>{email.body}</span>
+          <span>{email.sendTo} </span><span>{email.body}</span>
           <div className="time-and-actions">
             <span>{time}</span>
             <button onClick={this.onRead}><img src={`${(isRead) ? "../../../assets/css/apps/mail/img/mail-read.png"

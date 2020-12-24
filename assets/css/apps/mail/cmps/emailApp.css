@@ -1,6 +1,4 @@
-.email-app {
-  
-}
+/* email-app */
 .email-app .main-content .actions-filters{
   border: 2px solid black;
   margin-left: 5px;
@@ -14,14 +12,12 @@
 .email-app .main-content .actions-filters a:hover{
   filter: invert(0.8);
   color: green;
-  
 }
 
 .email-app .main-content .actions-filters .compose{
   border-radius: 10px;
   outline: 0; 
   padding: 5px;
-  
 }
 .email-app .main-content .actions-filters .compose span{
   font-size: 1.8em;
@@ -29,7 +25,6 @@
 .email-app .main-content .actions-filters .compose img{
   width: 26px;
   margin-right: 5px;
-  
  }
 .email-app .main-content .actions-filters .compose:hover{
   filter: invert(0.9);

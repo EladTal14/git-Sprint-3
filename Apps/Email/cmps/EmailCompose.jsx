@@ -35,10 +35,10 @@ export class EmailCompose extends React.Component {
 
         </header>
         <form className="flex column" onSubmit={this.addEmail}>
-          <input type="text" placeholder="To" name="sendTo" value={email.sendTo} onChange={this.handleChange} autoFocus required />
-          <input type="text" placeholder="CC" name="cc" value={email.cc} onChange={this.handleChange} />
-          <input type="text" placeholder="BCC" name="bcc" value={email.bcc} onChange={this.handleChange} />
-          <input type="text" placeholder="Subject" name="subject" value={email.subject} onChange={this.handleChange} />
+          <input type="text" placeholder="To" name="sendTo" value={email.sendTo} onChange={this.handleChange} autoFocus autoComplete="off" required />
+          <input type="text" placeholder="CC" name="cc" value={email.cc} onChange={this.handleChange} autoComplete="off" />
+          <input type="text" placeholder="BCC" name="bcc" value={email.bcc} onChange={this.handleChange} autoComplete="off" />
+          <input type="text" placeholder="Subject" name="subject" value={email.subject} onChange={this.handleChange} autoComplete="off" />
           <textarea name="" id="" cols="50" rows="20" name="body" value={email.body} onChange={this.handleChange} required></textarea>
           <div className="actions flex space-between">
             <button type="submit" className="btn-box btn-gradient btn-pos">Send</button>

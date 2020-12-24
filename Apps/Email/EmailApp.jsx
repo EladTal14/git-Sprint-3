@@ -7,10 +7,10 @@ export class EmailApp extends React.Component {
   state = {
     emails: [],
     filterBy: {
-      name: '',
-      isRead: null
+      txt: '',
     },
-    isComopse: false,
+    isRead: null,
+    isComopseShown: false,
     isListShow: true
   }
   componentDidMount() {
@@ -18,47 +18,36 @@ export class EmailApp extends React.Component {
   }
   loadEmails = () => {
     emailService.query()
-      .then(emails => this.setState(
-        { emails }))
-      .then(() => console.log(this.state.emails))
+      .then(emails => this.setState({ emails }, () => console.log(this.state.emails)))
+
   }
 
   onSetFilter = (filterBy) => {
-    console.log('filterBy:', filterBy);
     this.setState({ filterBy });
   }
 
   get emailsForDisplay() {
     const { filterBy } = this.state;
-    const filterRegex = new RegExp(filterBy.subject, 'i');
-    return this.state.emails.filter(email => {
-      return (
-        filterRegex.test(email.subject) || filterRegex.test(email.body)
-      )
-    })
+    const filterRegex = new RegExp(filterBy.txt, 'i');
 
+    return this.state.emails.filter(email => email).filter(email => filterRegex.test(email.sendTo) || filterRegex.test(email.body))
+    return this.state.emails.filter(email => filterRegex.test(email.sendTo) || filterRegex.test(email.body))
   }
   onComposeEmail = () => {
-    this.setState({
-      isComopse: !this.state.isComopse
-    })
+    this.setState({ isComopseShown: !this.state.isComopseShown })
   }
   onAddNewEmail = (email) => {
     emailService.addEmailToInbox(email)
-      .then(() => this.loadEmails())
+      .then((addedEmail) => this.setState({ emails: [addedEmail, ...this.state.emails] }))
 
   }
   onEditEmail = () => {
-
-
-    this.setState({
-      isListShow: !this.state.isListShow
-    })
-
+    this.setState({ isListShow: !this.state.isListShow })
   }
   render() {
     const emailsForDisplay = this.emailsForDisplay
-    const { isComopse, isListShow } = this.state
+    const { isComopseShown, isListShow } = this.state
+
     return <section className="email-app ">
       <EmailFilter setFilter={this.onSetFilter} />
       <div className="main-content flex">
@@ -69,7 +58,7 @@ export class EmailApp extends React.Component {
           <a>Drafts</a>
           <a>bar</a>
         </div>
-        {isComopse && <EmailCompose composeEmail={this.onComposeEmail} addNewEmail={this.onAddNewEmail} />}
+        {isComopseShown && <EmailCompose composeEmail={this.onComposeEmail} addNewEmail={this.onAddNewEmail} />}
         {isListShow && <EmailList emails={emailsForDisplay} editEmail={this.onEditEmail} />}
       </div>
     </section>
