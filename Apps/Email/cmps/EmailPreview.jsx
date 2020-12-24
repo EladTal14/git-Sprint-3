@@ -1,4 +1,5 @@
 import { utilService } from '../../../services/utilService.js'
+import { emailService } from '../services/emailService.js'
 const { Link } = ReactRouterDOM;
 export class EmailPreview extends React.Component {
   state = {
@@ -20,6 +21,9 @@ export class EmailPreview extends React.Component {
     ev.stopPropagation()
     this.setState({
       isRead: !this.state.isRead
+    }, () => {
+      emailService.changeReadUnread(this.props.email.id)
+      this.props.readUnread()
     })
   }
   onTime = () => {

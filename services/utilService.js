@@ -29,6 +29,7 @@ function changeStampToDate(timeStamp) {
     if (hours > 0) {
         let date = (hours < 10) ? '0' + hours : hours;
         date += (minutes < 10) ? ':0' + minutes : ':' + minutes;
+        date += (hours < 10) ? ' AM' : ' PM';
         return date;
     }
     else {
