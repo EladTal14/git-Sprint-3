@@ -43,7 +43,7 @@ function addNote(newNote){
             }, [])
             break
     }
-    const newNoteToAdd = {id:utilService.makeId(), type: newNote.type, info: newInfo}
+    const newNoteToAdd = {id:utilService.makeId(), type: newNote.type, info: newInfo, style: 'lightskyblue'}
     gNotes = [newNoteToAdd, ...gNotes]
     console.log(newInfo)
     _saveNotesToStorage()

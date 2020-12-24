@@ -22,7 +22,7 @@ export class EmailSort extends React.Component {
       <section className="sortBy">
         <span>Sort By: </span>
         <label htmlFor="" >
-          <select name="option" id="" value={this.state.sortBy.option} onChange={this.handleChange}>
+          <select name="option" id="" value={this.state.sortBy.option} onChange={this.handleChange} className="sortBy-option">
             <option value="dateUp">Date ↑</option>
             <option value="dateDown">Date ↓</option>
             <option value="titleUp">Title ↑</option>

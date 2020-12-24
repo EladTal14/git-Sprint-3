@@ -29,17 +29,11 @@ export class NoteTxt extends React.Component {
   }
   refInput = React.createRef();
 
-  onChangeTxt = (ev) => {
-    const value = ev.target.value;
-    const field = ev.target.name
-    this.setState({ [field]: value })
-    keepService.updateTxt(value, this.props.id)
+  onChangeTxt = () => {
+    var newTxt = this.refInput.current.innerText
+    keepService.updateTxt(newTxt, this.props.id)
+    this.setState({ txt: newTxt })
   }
-  // onChangeTxt = () => {
-  //   var newTxt = this.refInput.current.innerText
-  //   keepService.updateTxt(newTxt, this.props.id)
-  //   this.setState({ txt: newTxt })
-  // }
 
   render() {
     const {color} = this.state
@@ -47,7 +41,7 @@ export class NoteTxt extends React.Component {
     const { txt } = this.props.info
     return (
       <div className="txt-note note-card" style={{ backgroundColor: color }}>
-        <textarea name="txt" id="" cols="22" rows="3" style={{ backgroundColor: color }} value={txt} className="editble-txt" onChange={this.onChangeTxt}>{txt}</textarea>
+        <div contentEditable="true" suppressContentEditableWarning={true} ref={this.refInput} onKeyUp={this.onChangeTxt}>{txt}</div>
         <div className="note-icons">
           <button><img src="./assets/css/apps/keep/img/txt.png" alt="" /></button>
           <button><img src="./assets/css/apps/keep/img/pin.png" alt="" /></button>

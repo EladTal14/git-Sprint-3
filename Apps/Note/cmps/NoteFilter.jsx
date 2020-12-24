@@ -13,6 +13,7 @@ export class NoteFilter extends React.Component {
     render() {
         return (
             <section className="note-filter-box">
+                <img src="./assets/img/search.png" alt=""/>
                 <input type="text" name="name" className="filter-note-input"
                     value={this.state.name}
                     placeholder="Search notes"

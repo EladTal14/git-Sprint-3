@@ -1,3 +1,12 @@
 @import './cmps/NotesList.css';
 @import './cmps/AddNote.css';
 @import './cmps/NotesFilter.css';
+
+.keep-app{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.keep-app h1{
+    margin: 5px;
+}
