@@ -1,16 +1,16 @@
+import {keepService} from "../services/keepService.js"
 export class NoteTxt extends React.Component {
 
   state = {
     color: 'lightgreen',
-    // txt: ''
+    txt: ''
   }
 
-  // add get note by id
-  // setTxt = () =>{
-  //   this.setState({
-  //     txt: this.props.info.txt
-  //   })
-  // }
+  loadTxt = () => {
+    this.setState({
+      txt: this.props.info.txt
+    })
+  }
 
   onInputChange = (ev) => {
     const value = ev.target.value;
@@ -21,15 +21,22 @@ export class NoteTxt extends React.Component {
   onDeleteNote = (noteId) => {
     this.props.deleteNote(noteId)
   }
+  refInput = React.createRef();
+  
+  onChangeTxt = () => {
+    var newTxt = this.refInput.current.innerText
+    keepService.updateTxt(newTxt, this.props.id)
+    this.setState({txt: newTxt})
+  }
 
   render() {
     const { color } = this.state
     const {id} = this.props
     const { txt } = this.props.info
-
+    if(this.refInput.current) console.log(this.refInput.current.innerText);
     return (
       <div className="txt-note note-card" style={{ backgroundColor: color }}>
-        <h3>{txt}</h3>
+        <div contentEditable="true" suppressContentEditableWarning={true} ref={this.refInput} onKeyUp={this.onChangeTxt}>{txt}</div>
         <div className="note-icons">
           <button><img src="../../../assets/css/apps/keep/img/txt.png" alt="" /></button>
           <button><img src="../../../assets/css/apps/keep/img/pin.png" alt="" /></button>

@@ -6,7 +6,7 @@ export const keepService = {
     query,
     addNote,
     deleteNote,
-    // toggleTodo,
+    updateTxt,
     // save,
     // getById,
 };
@@ -55,14 +55,6 @@ function deleteNote(noteId){
    return Promise.resolve()
 }
 
-// function toggleTodo(id) {
-//     var todo = gTodos.find(function (todo) {
-//         return todo.id === id
-//     })
-//     todo.isDone = !todo.isDone
-//     _saveTodosToStorage()
-// }
-
 // function getNoteById(noteId){
 
 // }
@@ -71,6 +63,20 @@ function deleteNote(noteId){
 //     var idx = gNotes.findIndex(note => note.id === noteId)
 //     return idx
 // }
+
+function updateTxt(newTxt,noteId ){
+    console.log('txt', newTxt, 'id', noteId);
+    const note = gNotes.find(note => note.id === noteId)
+    const idx = gNotes.findIndex(note => note.id === noteId)
+    const noteToUpdate = {...note}
+    noteToUpdate.info.txt = newTxt
+    const notesToUpdate = [... gNotes]
+    notesToUpdate[idx] = noteToUpdate
+    gNotes = notesToUpdate
+    _saveNotesToStorage()
+    return Promise.resolve(noteToUpdate)
+    
+}
 
 function query() {
     return Promise.resolve(gNotes);
@@ -121,7 +127,7 @@ function _getDemoNotes() {
             id: utilService.makeId(),
             type: "NoteVideo",
             info: {
-                url: 'https://www.youtube.com/watch?v=BjhW3vBA1QU',
+                url: 'https://www.youtube.com/embed/watch?v=BjhW3vBA1QU',
                 txt: "My new favorit song"
             },
             style: {
