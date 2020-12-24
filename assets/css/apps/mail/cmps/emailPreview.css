@@ -1,18 +1,20 @@
 /* email-preview  */
 .email-preview{
   border: 1px solid rgb(189, 180, 180);
-
+  
   padding: 3px;
   margin-bottom: 1px;
 }
 .email-preview:hover{
-  opacity: 0.45;
+  opacity: 0.8;
+  box-shadow: inset 1px 1px 5px black;
 }
 
 .email-preview button {
   background-color: unset;
   border: 0;
   cursor: pointer;
+  
 }
 
 .email-preview button img{
@@ -20,6 +22,7 @@ width: 20px;
 }
 .email-preview button img:hover{
 filter: invert(0.9);
+
 }
 li.email-preview {
   display: flex;

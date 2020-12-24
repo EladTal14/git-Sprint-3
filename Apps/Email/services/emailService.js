@@ -3,7 +3,8 @@ import { storageService } from '../../../services/storage-service.js'
 
 export const emailService = {
   query,
-  addEmailToInbox
+  addEmailToInbox,
+
 }
 
 
@@ -26,7 +27,8 @@ function query() {
 }
 
 function addEmailToInbox(email) {
-  const emailToadd = { id: utilService.makeId(), isRead: false, ...email }
+  const sentAt = Date.now()
+  const emailToadd = { id: utilService.makeId(), sentAt, isRead: false, ...email }
   emails = [emailToadd, ...emails]
   _saveEmailsToStorage()
   return Promise.resolve(emailToadd)

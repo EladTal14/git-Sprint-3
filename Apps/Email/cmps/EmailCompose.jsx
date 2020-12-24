@@ -7,20 +7,10 @@ export class EmailCompose extends React.Component {
       cc: '',
       bcc: '',
       subject: '',
-      userTxt: ''
+      body: ''
     }
   }
-  // componentDidMount() {
-  //   this.setState({
-  //     email: {
-  //       sendTo: '',
-  //       cc: '',
-  //       bcc: '',
-  //       subject: '',
-  //       body: ''
-  //     }
-  //   })
-  // }
+
   addEmail = (ev) => {
     ev.preventDefault();
     console.log(this.state.email);

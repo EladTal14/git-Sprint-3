@@ -1,0 +1,8 @@
+/* filter */
+.filter{
+  display: flex;
+  justify-content: center;
+}
+input.filter-by-name{
+  margin: 0 auto;
+}

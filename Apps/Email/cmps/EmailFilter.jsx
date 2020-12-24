@@ -18,12 +18,13 @@ export class EmailFilter extends React.Component {
   render() {
 
     return (
-      <section>
+      <section className="filter">
         <input type="text" name="subject"
           value={this.props.subject}
           placeholder="Search mail"
           autoComplete="off"
           autoFocus
+          className="filter-by-name"
           onChange={this.handleChange} />
       </section>
     )

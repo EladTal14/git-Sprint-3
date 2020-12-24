@@ -2,7 +2,9 @@
 .email-list {
   margin-left: 5px;
   padding: 5px;
+  flex-grow: 1;
 }
 .email-list ul{
   padding: 0;
+  
 }
