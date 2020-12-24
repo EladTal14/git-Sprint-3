@@ -1,4 +1,5 @@
 import { AddNote } from "./cmps/AddNote.jsx";
+import { NoteFilter } from "./cmps/NoteFilter.jsx";
 import { NotesList } from "./cmps/NoteList.jsx";
 import {keepService} from "./services/keepService.js"
 
@@ -38,6 +39,7 @@ get notesToDisplay() {
     const notesToShow = this.notesToDisplay
     return <section className="keep-app">
       <h1>Your Notes!</h1>
+      <NoteFilter/>
       <AddNote addNote={this.addNote} />
       <NotesList notes={notesToShow} deleteNote={this.deleteNote}/>
     </section>
