@@ -7,6 +7,7 @@ export const keepService = {
     addNote,
     deleteNote,
     updateTxt,
+    saveColor,
     // save,
     // getById,
 };
@@ -65,7 +66,7 @@ function deleteNote(noteId){
 // }
 
 function updateTxt(newTxt,noteId ){
-    console.log('txt', newTxt, 'id', noteId);
+    // console.log('txt', newTxt, 'id', noteId);
     const note = gNotes.find(note => note.id === noteId)
     const idx = gNotes.findIndex(note => note.id === noteId)
     const noteToUpdate = {...note}
@@ -76,6 +77,19 @@ function updateTxt(newTxt,noteId ){
     _saveNotesToStorage()
     return Promise.resolve(noteToUpdate)
     
+}
+
+function saveColor(color, noteId){
+    console.log('color', color, 'id', noteId);
+    const note = gNotes.find(note => note.id === noteId)
+    const idx = gNotes.findIndex(note => note.id === noteId)
+    const noteToUpdate = {...note}
+    noteToUpdate.style = color
+    const notesToUpdate = [... gNotes]
+    notesToUpdate[idx] = noteToUpdate
+    gNotes = notesToUpdate
+    _saveNotesToStorage()
+    return Promise.resolve(noteToUpdate)
 }
 
 function query() {
@@ -91,7 +105,8 @@ function _getDemoNotes() {
             isPinned: true,
             info: {
                 txt: "Fullstack Me Baby!"
-            }
+            },
+            style: "lightgreen"
         },
         {   
             id: utilService.makeId(),
@@ -99,7 +114,8 @@ function _getDemoNotes() {
             isPinned: true,
             info: {
                 txt: "I miss the summer!!"
-            }
+            },
+            style: "lightgreen"
         },
         {
             id: utilService.makeId(),
@@ -108,9 +124,8 @@ function _getDemoNotes() {
                 url: 'https://miro.medium.com/max/1050/0*LFS-oAro8b1qmeH9.jpg',
                 txt: "Me playing Mi"
             },
-            style: {
-                backgroundColor: "lightpink"
-            }
+            style: "lightpink"
+
         },
         {
             id: utilService.makeId(),
@@ -121,7 +136,8 @@ function _getDemoNotes() {
                     { txt: "Do that", doneAt: null, id: utilService.makeId(), isDone: false },
                     { txt: "Do this", doneAt: 187111111, id: utilService.makeId(), isDone: false }
                 ]
-            }
+            },
+            style: "lightsteelblue"
         },
         {
             id: utilService.makeId(),
@@ -130,9 +146,8 @@ function _getDemoNotes() {
                 url: 'https://www.youtube.com/embed/watch?v=BjhW3vBA1QU',
                 txt: "My new favorit song"
             },
-            style: {
-                backgroundColor: "#00d"
-            }
+            style: "#ffffd2"
+
         },
     ];
     return notes;
