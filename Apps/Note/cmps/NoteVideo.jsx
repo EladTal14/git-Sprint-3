@@ -1,7 +1,7 @@
 export class NoteVideo extends React.Component {
 
   state = {
-    color: 'lightyellow',
+    color: '#ffffd2',
     // txt: ''
   }
 
