@@ -26,12 +26,12 @@ export class NoteImg extends React.Component {
   render() {
     const {color} = this.state
     const {id} = this.props
-    const {url, title} = this.props.info
+    const {url, txt} = this.props.info
 
     return (
       <div className="img-note note-card" style={{backgroundColor:color}}>
         <img src={url} alt=""/>
-        <h3>{title}</h3>
+        <h3>{txt}</h3>
         <div className="note-icons">
           <button><img src="../../../assets/css/apps/keep/img/picture.png" alt="" /></button>
           <button><img src="../../../assets/css/apps/keep/img/pin.png" alt="" /></button>

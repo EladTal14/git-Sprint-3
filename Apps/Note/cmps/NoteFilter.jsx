@@ -2,6 +2,7 @@ export class NoteFilter extends React.Component {
 
     state = {
         name: '',
+        type: '',
     }
 
     handelChange = ({ target }) => {
@@ -17,11 +18,19 @@ export class NoteFilter extends React.Component {
 
     render() {
         return (
-            <section className="note-filter">
-                <input type="text" name="name"
+            <section className="note-filter-box">
+                <input type="text" name="name" className="filter-note-input"
                     value={this.state.name}
-                    placeholder="Search note"
+                    placeholder="Search notes"
+                    autoComplete="off"
                     onChange={this.handelChange} />
+                <select value={this.state.value} onChange={this.handelChange} name="type" className="select-note">
+                    <option value="">All</option>
+                    <option value="NoteText">Text</option>
+                    <option value="NoteImg">Image</option>
+                    <option value="NoteVideo">Video</option>
+                    <option value="NoteTodos">Todos</option>
+                </select>
             </section>
         )
     }
