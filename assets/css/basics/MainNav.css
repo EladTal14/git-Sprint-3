@@ -25,3 +25,7 @@
 .main-header img{
     width: 100px;
 }
+
+.left-header{
+    align-items: center;
+}
