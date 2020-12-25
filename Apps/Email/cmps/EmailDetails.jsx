@@ -1,4 +1,5 @@
 import { emailService } from '../services/emailService.js'
+import { EmailSideBar } from './EmailSideBar.jsx';
 
 export class EmailDetails extends React.Component {
   state = {
@@ -31,6 +32,7 @@ export class EmailDetails extends React.Component {
     const { email } = this.state
     return (
       <section className="email-details">
+        <EmailSideBar />
         <h1>{email.subject}</h1>
         <h3>{email.sendTo}</h3>
         <pre>

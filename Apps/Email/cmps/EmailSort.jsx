@@ -1,4 +1,4 @@
-import { emailService } from '../services/emailService.js'
+
 export class EmailSort extends React.Component {
   state = {
     sortBy: {
@@ -6,13 +6,10 @@ export class EmailSort extends React.Component {
     },
 
   }
-  ComponentDidMount() {
-    this.setState({ sortBy: { sort } })
-  }
+
   handleChange = (ev) => {
     const callback = () => {
-      this.props.setSort(this.state.sortBy, () => emailService.sortBy(sortBy.sort));
-
+      this.props.setSort(this.state.sortBy);
     };
     const sortBy = { ...this.state.sortBy }
     sortBy[ev.target.name] = ev.target.value
@@ -23,14 +20,14 @@ export class EmailSort extends React.Component {
   render() {
 
     return (
-      <section className="sortBy">
-        <label htmlFor="" >
+      <section className="sort-by">
+        <label htmlFor="sort" >
           <span>Sort By: </span>
-          <select name="sort" id="" value={this.state.sortBy.sort} onChange={this.handleChange}>
+          <select name="sort" id="sort" value={this.state.sortBy.sort} onChange={this.handleChange}>
             <option value="date ↑">Date ↑</option>
             <option value="date ↓">Date ↓</option>
-            <option value="title ↑">Title ↑</option>
-            <option value="title ↓">Title ↓</option>
+            <option value="title ↑">Name ↑</option>
+            <option value="title ↓">Name ↓</option>
           </select>
         </label>
       </section>

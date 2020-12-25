@@ -3,6 +3,8 @@
 @import './cmps/emailApp.css';
 @import './cmps/emailList.css';
 @import './cmps/emailFilter.css';
+@import './cmps/emailSort.css';
+@import './cmps/emailSideBar.css';
 
 
 .is-read{

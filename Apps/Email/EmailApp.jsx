@@ -1,3 +1,4 @@
+import { EmailSideBar } from './cmps/EmailSideBar.jsx';
 import { EmailCompose } from './cmps/EmailCompose.jsx';
 import { EmailFilter } from './cmps/EmailFilter.jsx';
 import { EmailList } from './cmps/EmailList.jsx';
@@ -13,7 +14,6 @@ export class EmailApp extends React.Component {
     },
     sortBy: {
       sort: ''
-
     },
 
     isRead: null,
@@ -34,9 +34,14 @@ export class EmailApp extends React.Component {
   onSetFilter = (filterBy) => {
     this.setState({ filterBy });
   }
+
   onSetSort = (sortBy) => {
     this.setState({ sortBy });
+    emailService.sortBy(sortBy.sort)
+      .then(sortedEmails => this.setState({ emails: sortedEmails }))
+
   }
+
   get emailsForDisplay() {
     const { filterBy } = this.state;
     const filterRegex = new RegExp(filterBy.txt, 'i');
@@ -47,13 +52,18 @@ export class EmailApp extends React.Component {
       else return email[filterByOpt]
     }).filter(email => filterRegex.test(email.sendTo) || filterRegex.test(email.body))
   }
+
   onComposeEmail = () => {
     this.setState({ isComopseShown: !this.state.isComopseShown })
-  }
-  onAddNewEmail = (email) => {
-    emailService.addEmailToInbox(email)
-      .then((addedEmail) => this.setState({ emails: [addedEmail, ...this.state.emails] }))
 
+
+  }
+
+  onAddNewEmail = (email) => {
+    setTimeout(() => {
+      emailService.addEmailToInbox(email)
+        .then((addedEmail) => this.setState({ emails: [addedEmail, ...this.state.emails] }))
+    }, 1700);
   }
   onEditEmail = () => {
     this.setState({ isListShow: !this.state.isListShow })
@@ -69,13 +79,14 @@ export class EmailApp extends React.Component {
       <EmailFilter setFilter={this.onSetFilter} />
       <EmailSort setSort={this.onSetSort} />
       <div className="main-content flex">
-        <div className="actions-filters flex column space-between">
+        <EmailSideBar composeEmail={this.onComposeEmail} />
+        {/* <div className="actions-filters flex column space-between">
           <button className="compose" onClick={this.onComposeEmail}><img src="./assets/css/apps/mail/img/compose-btn.png" /><span>Compose</span> </button>
           <a>Starred</a>
           <a>Sent Mail</a>
           <a>Drafts</a>
           <a>bar</a>
-        </div>
+        </div> */}
         {isComopseShown && <EmailCompose composeEmail={this.onComposeEmail} addNewEmail={this.onAddNewEmail} />}
         {isListShow && <EmailList emails={emailsForDisplay} editEmail={this.onEditEmail} readUnread={this.onReadUnreadEmail} />}
       </div>
