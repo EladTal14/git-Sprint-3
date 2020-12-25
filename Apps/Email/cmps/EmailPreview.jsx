@@ -30,8 +30,8 @@ export class EmailPreview extends React.Component {
     this.props.editEmail()
   }
   removeEmail = (ev) => {
-    console.log(this.props.email.id);
     ev.preventDefault()
+    ev.stopPropagation()
     this.props.removeEmail(this.props.email.id)
   }
   render() {

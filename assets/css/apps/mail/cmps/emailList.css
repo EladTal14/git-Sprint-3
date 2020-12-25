@@ -1,14 +1,16 @@
 /* email-list */
 .email-list {
   margin-left: 5px;
-  padding: 5px;
+  padding: 0 5px 0 10px;
   flex-grow: 1;
   overflow-y: scroll ;
-  height: 74vh;
+  height: 62vh;
   margin-right: 10px;
 }
+
 .email-list ul{
   padding: 0;
+  margin: 0;
 }
 
 .email-list::-webkit-scrollbar {
