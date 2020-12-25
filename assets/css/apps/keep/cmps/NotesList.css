@@ -5,6 +5,7 @@
     justify-items: center;
     margin: 10px auto;
     gap: 10px;
+    transition: display 2s;
 }
 
 .note-card{
@@ -58,8 +59,16 @@
 
 
 .note-icons{
+    height: 50px;
     display: flex;
     justify-content: space-around;
+    opacity: 0;
+    transition: opacity 0.9s;
+}
+
+.note-card:hover .note-icons{
+    opacity: 1;
+    transition: opacity 0.9s;
 }
 
 .note-icons button, .new-todo-add button{

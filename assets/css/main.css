@@ -5,6 +5,8 @@
 @import './basics/About.css';
 @import './basics/MainNav.css';
 @import './basics/UserMsg.css';
+@import './basics/HomePage.css';
+
 /* Components */
 
 @import './apps/keep/keepMain.css';

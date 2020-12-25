@@ -71,10 +71,11 @@ export class EmailApp extends React.Component {
     }, 4100);
   }
   onRemoveEmail = (id) => {
+    console.log(this.state.isListShow);
     emailService.removeEmail(id)
       .then(() => this.setState({ emails: [...this.state.emails] }))
       .then(() => eventBusService.emit('showMsg', 'Email removed'))
-
+      .then(() => console.log(this.state.isListShow))
   }
   onEditEmail = () => {
     this.setState({ isListShow: !this.state.isListShow })

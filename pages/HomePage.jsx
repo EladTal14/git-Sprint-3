@@ -1,21 +1,16 @@
-
-
-
 export class HomePage extends React.Component {
 
     state = {
 
     }
 
-
-    componentDidMount() {
-
-    }
-
     render() {
         return (
-            <section>
-                <h2>Home Sweet Home</h2>
+            <section className="home-page">
+                <div className="h-container">
+                    <h1>Appsus</h1>
+                    <h3>Your favorite apps in one place</h3>
+                </div>
             </section>
         )
     }
