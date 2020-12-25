@@ -8,6 +8,7 @@ export const keepService = {
     deleteNote,
     updateTxt,
     saveColor,
+    togglePin,
     // save,
     // getById,
 };
@@ -56,14 +57,17 @@ function deleteNote(noteId){
    return Promise.resolve()
 }
 
-// function getNoteById(noteId){
+function togglePin(noteId){
+    const note = gNotes.find(note => note.id === noteId)
+    const idx = gNotes.findIndex(note => note.id === noteId)
+    note.isPinned = !note.isPinned
+    const notesToUpdate = [... gNotes]
+    notesToUpdate[idx] = note
+    gNotes = notesToUpdate
+    _saveNotesToStorage()
+    return Promise.resolve(notesToUpdate)
+}
 
-// }
-
-// function getIdxById(noteId){
-//     var idx = gNotes.findIndex(note => note.id === noteId)
-//     return idx
-// }
 
 function updateTxt(newTxt,noteId ){
     // console.log('txt', newTxt, 'id', noteId);
@@ -111,7 +115,7 @@ function _getDemoNotes() {
         {   
             id: utilService.makeId(),
             type: "NoteText",
-            isPinned: true,
+            isPinned: false,
             info: {
                 txt: "I miss the summer!!"
             },
@@ -120,6 +124,7 @@ function _getDemoNotes() {
         {
             id: utilService.makeId(),
             type: "NoteImg",
+            isPinned: true,
             info: {
                 url: 'https://miro.medium.com/max/1050/0*LFS-oAro8b1qmeH9.jpg',
                 txt: "Me playing Mi"
@@ -130,6 +135,7 @@ function _getDemoNotes() {
         {
             id: utilService.makeId(),
             type: "NoteTodos",
+            isPinned: false,
             info: {
                 label: "How was it:",
                 todos: [
@@ -142,6 +148,7 @@ function _getDemoNotes() {
         {
             id: utilService.makeId(),
             type: "NoteVideo",
+            isPinned: false,
             info: {
                 url: 'https://www.youtube.com/embed/watch?v=BjhW3vBA1QU',
                 txt: "My new favorit song"
