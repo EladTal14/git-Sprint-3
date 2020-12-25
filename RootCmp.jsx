@@ -7,6 +7,7 @@ import { MainNav } from './cmps/MainNav.jsx'
 import { About } from './pages/About.jsx'
 import { HomePage } from './pages/HomePage.jsx'
 import { UserMsg } from './cmps/UserMsg.jsx'
+import { Footer } from './cmps/Footer.jsx'
 import { EmailDetails } from './Apps/Email/cmps/EmailDetails.jsx'
 // import { NoteDetails } from './Apps/Mail/cmps/EmailDetails.jsx'
 import { NotePreview } from './Apps/Note/cmps/NotePreview.jsx';
@@ -28,7 +29,7 @@ export function RootCmp() {
                     <Route path="/about" component={About} />
                     <Route path="/" component={HomePage} />
                 </Switch>
-
+                <Footer />
             </section>
         </Router>
     )
