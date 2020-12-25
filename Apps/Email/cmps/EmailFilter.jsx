@@ -21,7 +21,8 @@ export class EmailFilter extends React.Component {
   render() {
     console.log(this.state.filterBy);
     return (
-      <section className="filter">
+      <section className="email-filter">
+        <img src="./assets/img/search.png" alt=""/>
         <input type="text" name="txt"
           value={this.state.filterBy.txt}
           placeholder="Search mail"
@@ -29,7 +30,7 @@ export class EmailFilter extends React.Component {
           autoFocus
           className="filter-by-name"
           onChange={this.handleChange} />
-        <select name="option" id="" value={this.state.filterBy.option} onChange={this.handleChange}>
+        <select name="option" id="" value={this.state.filterBy.option} onChange={this.handleChange} className="filter-option">
           <option value="sendTo">Sent To</option>
           <option value="isRead">Read</option>
           <option value="unRead">Unread</option>

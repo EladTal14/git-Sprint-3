@@ -1,14 +1,15 @@
-// import { keepService } from "./services/keepService.js"
+import { keepService } from "../services/keepService.js"
 export class NoteTodos extends React.Component {
 
   state = {
-    color: 'lightsteelblue',
+    color: '',
     todos: []
   }
 
   componentDidMount() {
     console.log('Page is ready');
     this.loadTodos()
+    this.loadColor()
   }
 
   loadTodos = () => {
@@ -17,10 +18,17 @@ export class NoteTodos extends React.Component {
     }, () => console.log(this.state.todos))
   }
 
+  loadColor = () => {
+    this.setState({
+      color: this.props.color
+    })
+  }
+
   onInputChange = (ev) => {
     const value = ev.target.value;
     const field = ev.target.name
     this.setState({ [field]: value })
+    keepService.saveColor(value, this.props.id)
   }
 
   onDeleteNote = (noteId) => {

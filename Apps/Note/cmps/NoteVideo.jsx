@@ -1,21 +1,27 @@
+import { keepService } from "../services/keepService.js"
 export class NoteVideo extends React.Component {
 
   state = {
-    color: '#ffffd2',
-    // txt: ''
+    color: '',
+    txt: ''
   }
 
-  // add get note by id
-  // setTxt = () =>{
-  //   this.setState({
-  //     txt: this.props.info.txt
-  //   })
-  // }
+  componentDidMount() {
+    this.loadTxtAndColor()
+}
+
+  loadTxtAndColor = () => {
+    this.setState({
+      txt: this.props.info.txt,
+      color: this.props.color
+    })
+  }
 
   onInputChange = (ev) => {
     const value = ev.target.value;
     const field = ev.target.name
     this.setState({ [field]: value })
+    keepService.saveColor(value, this.props.id)
   }
 
   onDeleteNote = (noteId) => {

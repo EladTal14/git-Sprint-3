@@ -47,7 +47,7 @@ get notesToDisplay() {
   render() {
     const notesToShow = this.notesToDisplay
     return <section className="keep-app">
-      <h1>Your Notes!</h1>
+      {/* <h1>Your Notes!</h1> */}
       <NoteFilter filterBy={this.state.filterBy} onSetFilter={this.onSetFilter}/>
       <AddNote addNote={this.addNote} />
       <NotesList notes={notesToShow} deleteNote={this.deleteNote}/>

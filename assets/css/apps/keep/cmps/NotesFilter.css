@@ -1,13 +1,22 @@
 .note-filter-box{
-    margin-left: 10px;
-    /* text-align: center; */
+    margin: 5px auto 10px;
+    text-align: center;
+    background-color: #f0f5f9;
+    width: 400px;
+    border-radius: 100px;
+}
+
+.note-filter-box img{
+    width: 25px;
+    margin: 5px 5px 0;
+    opacity: 0.8;
 }
 
 .filter-note-input{
     width: 250px;
     background-color: unset;
     border: 0;
-    border-bottom: 2px solid #49555e;
+    /* border-bottom: 2px solid #49555e; */
     outline: none;
     margin: 10px auto;
     font-size: 1.125rem;
@@ -24,7 +33,7 @@
 .select-note{
     background-color: unset;
     border: 0;
-    border-bottom: 2px solid #49555e;
+    /* border-bottom: 2px solid #49555e; */
     outline: none;
     font-size: 1.125rem;
     color: #49555e;
@@ -32,6 +41,6 @@
 }
 
 .select-note option{
-    background-color: #c9d6df;
+    background-color: #f0f5f9;
     padding: 5px;
 }
