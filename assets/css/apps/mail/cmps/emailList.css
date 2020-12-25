@@ -3,6 +3,8 @@
   margin-left: 5px;
   padding: 5px;
   flex-grow: 1;
+  overflow-y: scroll ;
+  height: 74vh;
 }
 .email-list ul{
   padding: 0;

@@ -18,6 +18,7 @@ export class EmailCompose extends React.Component {
     this.props.composeEmail()
     this.props.addNewEmail(this.state.email)
 
+
   }
   handleChange = (ev) => {
     const value = ev.target.value;

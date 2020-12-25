@@ -1,0 +1,39 @@
+/* side-bar */
+.side-bar{
+  height: 30vh;
+}
+.side-bar.actions-filters {
+  border: 2px solid black;
+  margin-left: 5px;
+}
+
+.side-bar.actions-filters a {
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.side-bar.actions-filters a:hover {
+  filter: invert(0.8);
+  color: green;
+}
+
+.side-bar.actions-filters .compose {
+  border-radius: 10px;
+  outline: 0;
+  padding: 5px;
+}
+
+.side-bar.actions-filters .compose span {
+  font-size: 1.8em;
+}
+
+.side-bar.actions-filters .compose img {
+  width: 26px;
+  margin-right: 5px;
+}
+
+.side-bar.actions-filters .compose:hover {
+  filter: invert(0.9);
+}

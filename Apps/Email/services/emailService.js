@@ -7,6 +7,7 @@ export const emailService = {
   getById,
   removeEmail,
   changeReadUnread,
+  sortBy,
 }
 
 
@@ -34,7 +35,40 @@ function getById(emailId) {
   const email = emails.find(email => email.id === emailNoSpace);
   return Promise.resolve(email);
 }
-
+function sortBy(sortByVal) {
+  console.log(sortByVal);
+  let val = null
+  let upDown = null
+  if (sortByVal.includes('t')) val = 'title'
+  else val = 'date'
+  let isDown = sortByVal.includes('↓')
+  if (isDown) upDown = '↓'
+  else upDown = '↑'
+  let sortedEmails = null
+  if (val === 'date' && upDown === '↑') {
+    sortedEmails = emails.sort((email1, email2) => {
+      return email1.sentAt - email2.sentAt
+    })
+  }
+  if (val === 'date' && upDown === '↓') {
+    sortedEmails = emails.sort((email1, email2) => {
+      return email2.sentAt - email1.sentAt
+    })
+  }
+  if (val === 'title' && upDown === '↑') {
+    sortedEmails = emails.sort((email1, email2) => {
+      return (email2.sendTo).localeCompare(email1.sendTo)
+    })
+  }
+  if (val === 'title' && upDown === '↓') {
+    sortedEmails = emails.sort((email1, email2) => {
+      return (email1.sendTo).localeCompare(email2.sendTo)
+    })
+  }
+  console.log(sortedEmails);
+  _saveEmailsToStorage()
+  return Promise.resolve(sortedEmails)
+}
 function query() {
   return Promise.resolve(emails)
 }
@@ -54,15 +88,27 @@ function addEmailToInbox(email) {
 
 function _demoEmails() {
   const emails = [
-    { sendTo: 'elad', id: utilService.makeId(), subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: 1608791237884 },
-    {
-      sendTo: 'basya', id: utilService.makeId(), subject: 'hello dear alan', body:
-        `Computers, smartphones and interoint where we'd be stuck without them.
-          soundly at night.`, isRead: true, sentAt: 1551133930594
-    },
-    { sendTo: 'yaron', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: false, sentAt: 1563133930594 },
-    { sendTo: 'avi', id: utilService.makeId(), subject: 'Come Back to Instagram', body: 'we miss you at insta come look at new pics of your friends', isRead: false, sentAt: 1561133930594 },
-    { sendTo: 'rami', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: true, sentAt: 1581133930594 },
+    { sendTo: 'elad', id: utilService.makeId(), subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: 1 },
+    { sendTo: 'basya', id: utilService.makeId(), subject: 'hello dear alan', body: `Computers, smartphones and interoint where we'd be stuck without them. soundly at night.`, isRead: true, sentAt: 2 },
+    { sendTo: 'yaron', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: false, sentAt: 3 },
+    { sendTo: 'avi', id: utilService.makeId(), subject: 'Come Back to Instagram', body: 'we miss you at insta come look at new pics of your friends', isRead: false, sentAt: 4 },
+    { sendTo: 'rami', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: true, sentAt: 5 },
+    { sendTo: 'rami', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: true, sentAt: 5 },
+    { sendTo: 'rami', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: true, sentAt: 5 },
+    { sendTo: 'rami', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: true, sentAt: 5 },
+    { sendTo: 'rami', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: true, sentAt: 5 },
+    { sendTo: 'rami', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: true, sentAt: 5 },
+    { sendTo: 'rami', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: true, sentAt: 5 },
+    { sendTo: 'rami', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: true, sentAt: 5 },
+    { sendTo: 'rami', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: true, sentAt: 5 },
+    { sendTo: 'rami', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: true, sentAt: 5 },
+    { sendTo: 'rami', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: true, sentAt: 5 },
+    { sendTo: 'rami', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: true, sentAt: 5 },
+    { sendTo: 'rami', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: true, sentAt: 5 },
+    { sendTo: 'rami', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: true, sentAt: 5 },
+    { sendTo: 'rami', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: true, sentAt: 5 },
+    { sendTo: 'rami', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: true, sentAt: 5 },
+    { sendTo: 'rami', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: true, sentAt: 5 },
   ];
   return emails;
 }
