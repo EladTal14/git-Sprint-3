@@ -1,10 +1,10 @@
-@import '../../lib/animate.css';
+/* @import '../../lib/animate.css'; */
 /* Basics */
 @import './basics/base.css';
 @import './basics/fonts.css';
 @import './basics/About.css';
 @import './basics/MainNav.css';
-
+@import './basics/UserMsg.css';
 /* Components */
 
 @import './apps/keep/keepMain.css';

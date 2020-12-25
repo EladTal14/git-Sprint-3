@@ -1,7 +1,6 @@
 import { emailService } from '../services/emailService.js'
 import { EmailSideBar } from './EmailSideBar.jsx';
 import { EmailCompose } from './EmailCompose.jsx';
-
 export class EmailDetails extends React.Component {
   state = {
     email: null,
@@ -9,8 +8,6 @@ export class EmailDetails extends React.Component {
   }
   componentDidMount() {
     this.loadEmail();
-
-
   }
   loadEmail() {
     const { emailId } = this.props.match.params;
@@ -22,17 +19,13 @@ export class EmailDetails extends React.Component {
         this.setState({ email })
       })
   }
-
   onBack = () => {
     this.props.history.goBack()
-
   };
   onDeleteEmail = () => {
     emailService.removeEmail(this.state.email.id)
       .then(() => this.onBack())
-
   }
-
   render() {
     if (!this.state.email) return <div>...loading</div>
     const { email, isComopseShown } = this.state
@@ -45,9 +38,11 @@ export class EmailDetails extends React.Component {
           <pre>
             {email.body}
           </pre>
-          <button onClick={this.onDeleteEmail}>Delete Email</button>
-          <button className="reply">Reply</button>
-          <button className="back-to-emails" onClick={this.onBack}>Back to emails</button>
+          <div className="actions">
+            <button onClick={this.onDeleteEmail}>Delete Email</button>
+            <button className="reply">Reply</button>
+            <button className="back-to-emails" onClick={this.onBack}>Back to emails</button>
+          </div>
         </div>
         {isComopseShown && <EmailCompose composeEmail={this.onComposeEmail} addNewEmail={this.onAddNewEmail} />}
       </section>

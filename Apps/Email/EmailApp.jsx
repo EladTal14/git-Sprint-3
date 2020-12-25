@@ -1,5 +1,4 @@
 import { EmailSideBar } from './cmps/EmailSideBar.jsx';
-import { EmailCompose } from './cmps/EmailCompose.jsx';
 import { EmailFilter } from './cmps/EmailFilter.jsx';
 import { EmailList } from './cmps/EmailList.jsx';
 import { EmailSort } from './cmps/EmailSort.jsx';
@@ -16,14 +15,19 @@ export class EmailApp extends React.Component {
     sortBy: {
       sort: ''
     },
-
     isRead: null,
-    isComopseShown: false,
-    isListShow: true
+    isListShow: true,
+
   }
 
   componentDidMount() {
     this.loadEmails();
+    this.unsubscribe = eventBusService.on('gotNewEmail', (email) => {
+      this.setState({ emails: [email, ...this.state.emails] })
+    })
+  }
+  componentWillUnmount() {
+    this.unsubscribe();
   }
 
   loadEmails = () => {
@@ -56,37 +60,39 @@ export class EmailApp extends React.Component {
 
   onComposeEmail = () => {
     this.setState({ isComopseShown: !this.state.isComopseShown })
-
-
   }
 
   onAddNewEmail = (email) => {
-    eventBusService.emit('showMsg', 'Email Sent')
+    eventBusService.emit('showMsg', 'Email sent')
     setTimeout(() => {
       emailService.addEmailToInbox(email)
         .then((addedEmail) => this.setState({ emails: [addedEmail, ...this.state.emails] }))
-        .then(() => eventBusService.emit('showMsg', 'Email Recived'))
-    }, 1700);
+        .then(() => eventBusService.emit('showMsg', 'Email received'))
+    }, 4100);
+  }
+  onRemoveEmail = (id) => {
+    emailService.removeEmail(id)
+      .then(() => this.setState({ emails: [...this.state.emails] }))
+      .then(() => eventBusService.emit('showMsg', 'Email removed'))
+
   }
   onEditEmail = () => {
     this.setState({ isListShow: !this.state.isListShow })
   }
+
   onReadUnreadEmail = () => {
     this.setState({ emails: this.state.emails })
   }
   render() {
     const emailsForDisplay = this.emailsForDisplay
-    const { isComopseShown, isListShow } = this.state
+    const { isListShow } = this.state
 
-    return <section className="email-app ">
+    return <section className="email-app">
       <EmailFilter setFilter={this.onSetFilter} />
       <EmailSort setSort={this.onSetSort} />
-
       <div className="main-content flex">
-        <EmailSideBar composeEmail={this.onComposeEmail} />
-        {isComopseShown && <EmailCompose composeEmail={this.onComposeEmail}
-          addNewEmail={this.onAddNewEmail} />}
-        {isListShow && <EmailList emails={emailsForDisplay} composeEmail={this.onComposeEmail}
+        <EmailSideBar />
+        {isListShow && <EmailList emails={emailsForDisplay} removeEmail={this.onRemoveEmail}
           editEmail={this.onEditEmail} readUnread={this.onReadUnreadEmail} />}
 
       </div>

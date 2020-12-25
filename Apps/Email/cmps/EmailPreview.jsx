@@ -6,15 +6,12 @@ export class EmailPreview extends React.Component {
     isRead: false,
     time: null
   }
+
   componentDidMount() {
     this.setState({
       isRead: this.props.email.isRead,
-
     })
-    this.setState({
-      time: this.onTime()
-    })
-
+    this.setState({ time: this.onTime() })
   }
   onRead = (ev) => {
     ev.preventDefault()
@@ -32,17 +29,23 @@ export class EmailPreview extends React.Component {
   editEmail = () => {
     this.props.editEmail()
   }
+  removeEmail = (ev) => {
+    console.log(this.props.email.id);
+    ev.preventDefault()
+    this.props.removeEmail(this.props.email.id)
+  }
   render() {
-    const { email, composeEmail } = this.props
+    const { email } = this.props
     const { isRead } = this.state
     const { time } = this.state
     return (
 
-      <Link to={`/email/${email.id} `} onClick={this.editEmail} composeEmail={composeEmail} >
+      <Link to={`/email/${email.id} `} onClick={this.editEmail}  >
         <li className={`${(isRead) ? "is-read" : ''} email-preview `}>
           <span>{email.sendTo} </span><span>{email.body}</span>
           <div className="time-and-actions">
             <span>{time}</span>
+            <button onClick={this.removeEmail}><img src="./assets/css/apps/mail/img/trash.png" alt="" /></button>
             <button onClick={this.onRead}><img src={`${(isRead) ? "./assets/css/apps/mail/img/mail-read.png"
               : "./assets/css/apps/mail/img/mail-un-read.png"
               }`} title={`${(!isRead) ? 'Read Mail' : 'Unread Mail'}`} /></button>

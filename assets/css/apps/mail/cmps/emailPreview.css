@@ -2,9 +2,9 @@
 .email-preview{
   border: 1px solid rgb(189, 180, 180);
   padding: 8px;
-  
   margin-bottom: 3px;
 }
+
 .email-preview:hover{
   opacity: 0.8;
   box-shadow: inset 1px 1px 5px black;
@@ -19,12 +19,15 @@
 
 .email-preview button img{
 width: 20px;
+margin: 0 5px 0 5px;
 }
-.email-preview button img:hover{
-filter: invert(0.9);
 
+.email-preview button img:hover{
+filter: invert(0.7);
 }
+
 li.email-preview {
   display: flex;
   justify-content: space-between;
 }
+

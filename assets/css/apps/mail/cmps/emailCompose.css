@@ -26,23 +26,24 @@
   border: none;
   font-family: Montserrat;
   font-size: 1.125rem;
-  
 }
+
 .email-compose form input{
   padding: 3px;
 }
+
 .email-compose form .actions{
   background-color: #fff;
   padding: 5px;
 }
+
 .email-compose form .actions a img{
   width: 30px;
   cursor: pointer;
-  
 }
+
 .email-compose form .actions a img:hover{
   filter: invert(50%);
-
 }
 
 .btn-box {
@@ -60,7 +61,6 @@
   outline: 0;
   padding: 0 8px;
   cursor: pointer;
-  
   }
   
   .btn-pos {

@@ -1,4 +1,3 @@
-
 import { emailService } from '../services/emailService.js'
 export class EmailCompose extends React.Component {
   state = {
@@ -15,16 +14,15 @@ export class EmailCompose extends React.Component {
     ev.preventDefault();
     this.props.composeEmail()
     this.props.addNewEmail(this.state.email)
-
-
   }
+
   handleChange = (ev) => {
     const value = ev.target.value;
     const field = ev.target.name
     const email = { ...this.state.email, [field]: value }
     this.setState({ email })
-
   };
+
   render() {
     const { email } = this.state
     return (
