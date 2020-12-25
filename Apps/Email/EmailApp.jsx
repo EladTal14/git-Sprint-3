@@ -4,6 +4,7 @@ import { EmailFilter } from './cmps/EmailFilter.jsx';
 import { EmailList } from './cmps/EmailList.jsx';
 import { EmailSort } from './cmps/EmailSort.jsx';
 import { emailService } from './services/emailService.js';
+import { eventBusService } from '../../services/eventBusService.js';
 
 export class EmailApp extends React.Component {
   state = {
@@ -60,9 +61,11 @@ export class EmailApp extends React.Component {
   }
 
   onAddNewEmail = (email) => {
+    eventBusService.emit('showMsg', 'Email Sent')
     setTimeout(() => {
       emailService.addEmailToInbox(email)
         .then((addedEmail) => this.setState({ emails: [addedEmail, ...this.state.emails] }))
+        .then(() => eventBusService.emit('showMsg', 'Email Recived'))
     }, 1700);
   }
   onEditEmail = () => {

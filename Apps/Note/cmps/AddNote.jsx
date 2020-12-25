@@ -5,7 +5,7 @@ export class AddNote extends React.Component {
     txt: 'What\'s on your mind...',
     newCmp: {
       note: '',
-      type: '',
+      type: 'NoteText',
     }
   }
 

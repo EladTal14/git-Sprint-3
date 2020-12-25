@@ -2,6 +2,7 @@ import { AddNote } from "./cmps/AddNote.jsx";
 import { NoteFilter } from "./cmps/NoteFilter.jsx";
 import { NotesList } from "./cmps/NoteList.jsx";
 import { keepService } from "./services/keepService.js"
+import { eventBusService } from "../../services/eventBusService.js"
 
 export class KeepApp extends React.Component {
 
@@ -26,6 +27,7 @@ export class KeepApp extends React.Component {
   addNote = (note) => {
     keepService.addNote(note)
       .then(addedNote => this.setState({ notes: [addedNote, ...this.state.notes] }))
+      .then(()=> eventBusService.emit('showMsg', 'The Book Add Successfully'))
   }
 
   deleteNote = (noteId) => {

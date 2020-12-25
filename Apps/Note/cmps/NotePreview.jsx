@@ -19,11 +19,11 @@ function DynamicNoteCmp({ typeCmp, info, id, deleteNote, color, isPinned, toggle
     case 'NoteText':
       return <NoteTxt info={info} id={id} deleteNote={deleteNote} color={color} isPinned={isPinned} togglePin={togglePin}/>
     case 'NoteImg':
-      return <NoteImg info={info} id={id} deleteNote={deleteNote} color={color}/>
+      return <NoteImg info={info} id={id} deleteNote={deleteNote} color={color} isPinned={isPinned} togglePin={togglePin}/>
     case 'NoteTodos':
-      return <NoteTodos info={info} id={id} deleteNote={deleteNote} color={color}/>
+      return <NoteTodos info={info} id={id} deleteNote={deleteNote} color={color} isPinned={isPinned} togglePin={togglePin}/>
     case 'NoteVideo':
-      return <NoteVideo info={info} id={id} deleteNote={deleteNote} color={color}/>
+      return <NoteVideo info={info} id={id} deleteNote={deleteNote} color={color} isPinned={isPinned} togglePin={togglePin}/>
     default:
       <h2>hey!</h2>
   }

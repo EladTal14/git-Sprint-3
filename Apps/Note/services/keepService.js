@@ -9,6 +9,8 @@ export const keepService = {
     updateTxt,
     saveColor,
     togglePin,
+    updateLable,
+    saveNewTodo,
     // save,
     // getById,
 };
@@ -79,8 +81,19 @@ function updateTxt(newTxt,noteId ){
     notesToUpdate[idx] = noteToUpdate
     gNotes = notesToUpdate
     _saveNotesToStorage()
-    return Promise.resolve(noteToUpdate)
-    
+    return Promise.resolve(noteToUpdate)    
+}
+
+function saveNewTodo(newTodo, noteId){
+    const note = gNotes.find(note => note.id === noteId)
+    const idx = gNotes.findIndex(note => note.id === noteId)
+    const noteToUpdate = {...note}
+    const notesToUpdate = [... gNotes]
+    noteToUpdate.info.todos.unshift({txt: newTodo, doneAt: null, id: utilService.makeId(), isDone: false})
+    notesToUpdate[idx] = noteToUpdate
+    gNotes = notesToUpdate
+    _saveNotesToStorage()
+    return Promise.resolve(noteToUpdate) 
 }
 
 function saveColor(color, noteId){
@@ -89,6 +102,18 @@ function saveColor(color, noteId){
     const idx = gNotes.findIndex(note => note.id === noteId)
     const noteToUpdate = {...note}
     noteToUpdate.style = color
+    const notesToUpdate = [... gNotes]
+    notesToUpdate[idx] = noteToUpdate
+    gNotes = notesToUpdate
+    _saveNotesToStorage()
+    return Promise.resolve(noteToUpdate)
+}
+
+function updateLable(newLabel,noteId){
+    const note = gNotes.find(note => note.id === noteId)
+    const idx = gNotes.findIndex(note => note.id === noteId)
+    const noteToUpdate = {...note}
+    noteToUpdate.info.label = newLabel
     const notesToUpdate = [... gNotes]
     notesToUpdate[idx] = noteToUpdate
     gNotes = notesToUpdate
@@ -151,7 +176,7 @@ function _getDemoNotes() {
             isPinned: false,
             info: {
                 url: 'https://www.youtube.com/embed/watch?v=BjhW3vBA1QU',
-                txt: "My new favorit song"
+                txt: "My new favorite song"
             },
             style: "#ffffd2"
 

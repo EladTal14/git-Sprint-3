@@ -21,6 +21,31 @@
     height: 200px;
 }
 
+
+
+.new-todo-add{
+    margin: 10px auto;
+    text-align: center;
+    /* background-color: #f0f5f9; */
+    width: 230px;
+    border-radius: 100px;
+}
+
+.new-todo-add img{
+    width: 18px;
+    opacity: 0.7;
+}
+
+.new-todo-add .editble-todo{
+    width: 150px;
+    background-color: unset;
+    border: 1px solid #49555ea1;
+    outline: none;
+    font-size: 1rem;
+    color: #49555e;
+    font-family: Montserrat, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 .img-note img, .video-note iframe{
     margin: 5px auto;
     max-width: 300px;
@@ -37,7 +62,7 @@
     justify-content: space-around;
 }
 
-.note-icons button {
+.note-icons button, .new-todo-add button{
     background-color: unset;
     border: 0;
     cursor: pointer;
@@ -88,7 +113,7 @@
 }
 
 .editble-title{
-    margin-top: 10px;
+    margin: 10px auto;
     border: 0;
     outline: none;
     font-size: 1.125rem;
@@ -101,4 +126,8 @@
 /* todos */
 .todo-done {
     text-decoration: line-through;
+}
+
+.todos-note li{
+    cursor: pointer;
 }
