@@ -35,19 +35,23 @@ export class NoteImg extends React.Component {
     keepService.updateTxt(value, this.props.id)
   }
 
+  onTogglePin = (noteId) => {
+    this.props.togglePin(noteId)
+  }
+
   render() {
     const { color } = this.state
-    const { id } = this.props
+    const { id, isPinned } = this.props
     const { url, txt } = this.props.info
 
     return (
       <div className="img-note note-card" style={{ backgroundColor: color }}>
         <img src={url} alt="" />
         {/* <h3>{txt}</h3> */}
-        <input type="text" name="txt" value={txt} className="editble-title" onChange={this.onChangeTxt} style={{ backgroundColor: color }} placeholder="giv me a title!"/>
+        <input type="text" name="txt" value={txt} className="editble-title" onChange={this.onChangeTxt} style={{ backgroundColor: color }} placeholder="give me a title!"/>
         <div className="note-icons">
           <button><img src="./assets/css/apps/keep/img/picture.png" alt="" /></button>
-          <button><img src="./assets/css/apps/keep/img/pin.png" alt="" /></button>
+          <button className={`${isPinned ? 'note-pinned' : '' } pin-button`}  onClick={() => this.onTogglePin(id)} ><img src="./assets/css/apps/keep/img/pin.png" alt="" /></button>
           <button className="color-btn"><input className="change-color" type="color" onChange={this.onInputChange} name="color" /></button>
           <button onClick={() => this.onDeleteNote(id)}><img src="./assets/css/apps/keep/img/trash.png" alt="" /></button>
         </div>
