@@ -6,8 +6,51 @@
   flex-grow: 1;
   margin-left: 10px;
   text-align: center;
-  border: 2px solid black
+
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.email-details .back-to-emails{
-  align-self: center;
+.email-details .email-body h1{
+  flex-grow: 3;
+}
+.email-details .email-body h3{
+  flex-grow: 2;
+}
+.email-details .email-body pre{
+  flex-grow: 8;
+  overflow-y: scroll;
+}
+.email-details .email-body pre::-webkit-scrollbar {
+  display: none;
+}
+.email-details .email-body .actions{
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+.email-details .email-body .actions button{
+  outline: 0;
+  cursor: pointer;
+  width:102px;
+  border-radius: 15px;
+  box-shadow: 0 4px #999;
+}
+.email-details .email-body .actions button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.email-details .email-body .actions .delete{
+  background-color: rgb(250, 161, 161);
+
+}
+.email-details .email-body .actions .reply{
+  background-color: rgb(152, 219, 152);
+
+}
+.email-details .email-body .actions .back-to-emails{
+  background-color: rgb(224, 233, 148);
+
 }

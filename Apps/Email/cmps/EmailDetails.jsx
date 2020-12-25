@@ -1,6 +1,7 @@
 import { emailService } from '../services/emailService.js'
 import { EmailSideBar } from './EmailSideBar.jsx';
 import { EmailCompose } from './EmailCompose.jsx';
+import { eventBusService } from '../../../services/eventBusService.js'
 export class EmailDetails extends React.Component {
   state = {
     email: null,
@@ -25,6 +26,7 @@ export class EmailDetails extends React.Component {
   onDeleteEmail = () => {
     emailService.removeEmail(this.state.email.id)
       .then(() => this.onBack())
+      .then(() => eventBusService.emit('showMsg', 'Email removed'))
   }
   render() {
     if (!this.state.email) return <div>...loading</div>
@@ -39,7 +41,7 @@ export class EmailDetails extends React.Component {
             {email.body}
           </pre>
           <div className="actions">
-            <button onClick={this.onDeleteEmail}>Delete Email</button>
+            <button onClick={this.onDeleteEmail} className="delete">Delete Email</button>
             <button className="reply">Reply</button>
             <button className="back-to-emails" onClick={this.onBack}>Back to emails</button>
           </div>

@@ -5,13 +5,14 @@ import { emailService } from '../services/emailService.js'
 export class EmailSideBar extends React.Component {
   state = {
     isComopseShown: false,
+    unreadEmails: 1
   }
   componentDidMount() {
 
   }
 
   onComposeEmail = () => {
-    this.setState({ isComopseShown: !this.state.isComopseShown }, () => console.log(this.state))
+    this.setState({ isComopseShown: !this.state.isComopseShown })
   }
 
   onAddNewEmail = (email) => {

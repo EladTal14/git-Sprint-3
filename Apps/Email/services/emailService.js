@@ -72,9 +72,8 @@ function query() {
 }
 function removeEmail(emailId) {
   emails = emails.filter(email => email.id !== emailId);
-  console.log(emails);
   _saveEmailsToStorage();
-  return Promise.resolve();
+  return Promise.resolve(emails);
 
 }
 function addEmailToInbox(email) {
