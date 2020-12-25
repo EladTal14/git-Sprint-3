@@ -19,10 +19,9 @@ export class EmailFilter extends React.Component {
   };
 
   render() {
-    console.log(this.state.filterBy);
     return (
       <section className="email-filter">
-        <img src="./assets/img/search.png" alt=""/>
+        <img src="./assets/img/search.png" alt="" />
         <input type="text" name="txt"
           value={this.state.filterBy.txt}
           placeholder="Search mail"

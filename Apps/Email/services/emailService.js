@@ -36,7 +36,7 @@ function getById(emailId) {
   return Promise.resolve(email);
 }
 function sortBy(sortByVal) {
-  console.log(sortByVal);
+
   let val = null
   let upDown = null
   if (sortByVal.includes('t')) val = 'title'
@@ -65,7 +65,6 @@ function sortBy(sortByVal) {
       return (email1.sendTo).localeCompare(email2.sendTo)
     })
   }
-  console.log(sortedEmails);
   _saveEmailsToStorage()
   return Promise.resolve(sortedEmails)
 }

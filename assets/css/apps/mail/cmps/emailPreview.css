@@ -1,9 +1,9 @@
 /* email-preview  */
 .email-preview{
   border: 1px solid rgb(189, 180, 180);
+  padding: 8px;
   
-  padding: 3px;
-  margin-bottom: 1px;
+  margin-bottom: 3px;
 }
 .email-preview:hover{
   opacity: 0.8;

@@ -1,0 +1,13 @@
+/* email-details */
+.email-details{
+  
+}
+.email-details .email-body{
+  flex-grow: 1;
+  margin-left: 10px;
+  text-align: center;
+  border: 2px solid black
+}
+.email-details .back-to-emails{
+  align-self: center;
+}

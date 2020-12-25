@@ -5,8 +5,22 @@
   flex-grow: 1;
   overflow-y: scroll ;
   height: 74vh;
+  margin-right: 10px;
 }
 .email-list ul{
   padding: 0;
-  
+}
+
+.email-list::-webkit-scrollbar {
+  width: 0.7em;
+}
+ 
+.email-list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+}
+ 
+.email-list::-webkit-scrollbar-thumb {
+  background: linear-gradient(#68737a, #c9d6df,#68737a);
+  border-radius: 10px;
 }

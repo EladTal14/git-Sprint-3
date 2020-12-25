@@ -1,8 +1,8 @@
 /* email-compose */
 .email-compose {
   position: absolute;
-  top:36.5vh;
-  right: 5vw;
+  top:35.9vh;
+  right: 1.6vw;
   z-index: 10;
 }
 .email-compose header{
@@ -15,9 +15,21 @@
 .email-compose header h1 {
   margin: 5px 3px 5px 3px ;
 }
+.email-compose header .close-btn{
+  cursor: pointer;
+}
+.email-compose header .close-btn:hover{
+  opacity: 0.4;
+}
 .email-compose textarea{
   resize: none;
   border: none;
+  font-family: Montserrat;
+  font-size: 1.125rem;
+  
+}
+.email-compose form input{
+  padding: 3px;
 }
 .email-compose form .actions{
   background-color: #fff;

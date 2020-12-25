@@ -5,6 +5,7 @@
 @import './cmps/emailFilter.css';
 @import './cmps/emailSort.css';
 @import './cmps/emailSideBar.css';
+@import './cmps/emailDetails.css';
 
 
 .is-read{
