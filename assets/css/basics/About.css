@@ -1,6 +1,6 @@
 .about-page{
     background-image: url("../../img/about2.jpg");
-    height: 71vh;
+    height: 78h;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -10,7 +10,7 @@
 
 .about-container{
     padding: 50px 20px 220px;
-    height: 500px;
+    height: 78vh;
     color: white;
     display: flex;
     flex-direction: column;
