@@ -4,6 +4,8 @@
   padding: 8px;
   margin-bottom: 3px;
   transition: all 0.3s ease-in-out;
+  font-weight: 600;
+  color: #121213
 }
 
 .email-preview:hover{

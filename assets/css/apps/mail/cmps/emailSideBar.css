@@ -1,17 +1,25 @@
 /* side-bar */
-.side-bar{
+
+.side-bar {
   height: 62vh;
 }
+
 .side-bar.actions-filters {
-  border: 2px solid black;
-  margin-left: 5px;
+  border: 2px solid #63737e;
+  margin: 0 10px;
+  border-radius: 8px;
+  padding: 5px;
 }
 
 .side-bar.actions-filters a {
   cursor: pointer;
-  background-color: #fff;
+  background-color: #f0f5f9;
   border-radius: 10px;
   text-align: center;
+  text-align: center;
+  height: 35px;
+  margin: 0 10px;
+  padding: 7px 0;
 }
 
 .side-bar.actions-filters a:hover {
@@ -22,6 +30,9 @@
   border-radius: 10px;
   outline: 0;
   padding: 5px;
+  width: 180px;
+  margin: 10px;
+  cursor: pointer;
 }
 
 .side-bar.actions-filters .compose span {
@@ -37,6 +48,6 @@
   filter: invert(0.9);
 }
 
-.side-bar.actions-filters .my-active{
-	background-color: red;
+.side-bar.actions-filters .my-active {
+  background-color: red;
 }

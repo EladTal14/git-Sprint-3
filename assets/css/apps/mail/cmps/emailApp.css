@@ -1,19 +1,23 @@
 /* email-app */
 
-.email-app .main-content{
-  margin: 20px;
+.email-app .main-content {
+  margin: 18px 20px;
 }
 
 .email-app .main-content .actions-filters {
-  border: 2px solid black;
-  margin-left: 5px;
+  /* border: 2px solid black;
+  margin-left: 5px; */
 }
 
 .email-app .main-content .actions-filters a {
   cursor: pointer;
-  background-color: #fff;
+  background-color: #f0f5f9;
   border-radius: 10px;
   text-align: center;
+  text-align: center;
+  height: 35px;
+  margin: 0 10px;
+  padding: 7px 0;
 }
 
 .email-app .main-content .actions-filters a:hover {
@@ -24,6 +28,9 @@
   border-radius: 10px;
   outline: 0;
   padding: 5px;
+  width: 180px;
+  margin: 10px;
+  cursor: pointer;
 }
 
 .email-app .main-content .actions-filters .compose span {
