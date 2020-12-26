@@ -26,14 +26,14 @@ export class ReviewAdd extends React.Component {
         return (<section className="form-review">
             <h1>Add review:</h1>
             <form className="review-form" onSubmit={this.onAddReview}>
-                <input value={review.fullName} onChange={this.onInputChange} type="text" name="fullName" placeholder="fullname" />
+                <input value={review.fullName} onChange={this.onInputChange} type="text" name="fullName" placeholder="Enter full name" />
                 <div>
                     <label htmlFor="quantity">Rate (between 1 and 5):</label>
                     <input value={review.rate} onChange={this.onInputChange} name="rate" type="number" min="1" max="5" />
                 </div>
                 <div>
                     <label htmlFor="" className="comment">Add a comment:</label>
-                    <textarea value={review.comment} onChange={this.onInputChange} name="comment" id="" cols="30" rows="10"></textarea>
+                    <textarea value={review.comment} onChange={this.onInputChange} name="comment" id="" cols="38" rows="13"></textarea>
                 </div>
                 <button className="book-btn add-btn" type="submit">Add</button>
             </form>
