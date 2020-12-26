@@ -16,7 +16,6 @@
 
 .side-bar.actions-filters a:hover {
   filter: invert(0.8);
-  color: green;
 }
 
 .side-bar.actions-filters .compose {

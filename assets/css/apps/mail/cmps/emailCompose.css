@@ -45,7 +45,9 @@
 .email-compose form .actions a img:hover{
   filter: invert(50%);
 }
-
+.email-compose form .actions a.trash{
+  background-color:unset;
+}
 .btn-box {
   -webkit-border-radius: 2px;
   border-radius: 2px;
