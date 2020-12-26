@@ -5,8 +5,8 @@
     justify-items: center;
     margin: 10px auto;
     gap: 10px;
-
 }
+
 .note-card{
     max-width: 330px;
     padding: 5px;
@@ -16,14 +16,14 @@
     flex-direction: column;
     justify-content: space-around;
     margin-bottom: 5px;
-    transition: all 1s ease-in-out;
-    
+    transition: all 1s ease-in-out;   
 }
+
 .note-card:hover{
     transform: scale(1.02); 
     box-shadow: 0 0 10px 4px rgb(0 0 0 / 0.5)
-    ;
 }
+
 .txt-note{
     height: 200px;
 }
