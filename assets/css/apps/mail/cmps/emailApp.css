@@ -18,7 +18,6 @@
 
 .email-app .main-content .actions-filters a:hover {
   filter: invert(0.8);
-  color: green;
 }
 
 .email-app .main-content .actions-filters .compose {

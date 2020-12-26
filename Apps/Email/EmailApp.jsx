@@ -69,7 +69,6 @@ export class EmailApp extends React.Component {
   }
 
   onRemoveEmail = (id) => {
-    console.log(id);
     emailService.removeEmail(id)
       .then((emails) => this.setState({ emails }))
       .then(() => eventBusService.emit('showMsg', 'Email removed'))

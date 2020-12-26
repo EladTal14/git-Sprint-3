@@ -1,0 +1,10 @@
+
+.reply-body{
+  position: relative;
+}
+.reply-body textarea{
+  resize: none;
+  border: none;
+  font-family: Montserrat;
+  font-size: 1.125rem;
+}
