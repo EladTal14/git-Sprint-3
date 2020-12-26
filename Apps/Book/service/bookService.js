@@ -757,15 +757,13 @@ var newBooks = [{
     textSnippet: "Tullio Treves * THE JURISDICTION OF THE INTERNATIONAL TRIBUNAL FOR <br> THE LAW OF THE <b>SEA</b> I . GENERAL ASPECTS ! The term “ jurisdiction ” refers to <br> the power of an international court or tribunal to decide ( potestas decidendi ) ."
   }
 }]
-// console.log(newBooks);
+
 
 function saveReview(book, review) {
   if (!book.reviews) book.reviews = [];
   book.reviews.push(review)
   _saveBooksToStorage();
-  console.log(book);
   return Promise.resolve(book)
-  // book[reviews] = (book[reviews]) ? book[reviews].push(review): review
 }
 
 function getById(bookId) {
@@ -776,7 +774,6 @@ function getById(bookId) {
 function getPrevBook(bookId) {
   let idx = gBooks.findIndex(book => book.id === bookId)
   if (idx === 0) idx = gBooks.length - 1
-  // return Promise.resolve(gBooks[idx-1].id);
   return gBooks[idx - 1].id
 }
 
@@ -1260,21 +1257,6 @@ function _createBooks() {
   _saveBooksToStorage(booksFromStorage);
   return booksFromStorage
 }
-
-// function _createNewBooks(){
-//   var booksFromStorage = storageService.loadFromStorage(KEY2)
-//   if (!booksFromStorage || !booksFromStorage.length) {
-//     console.log('calling axios')
-//     networkBookService.getNetworkBooks()
-//       .then(data => data.items)
-//       .then(items => {
-//         console.log(items);
-//         booksFromStorage = items
-//         storageService.saveToStorage(KEY2, booksFromStorage)
-//       })
-//   }
-//   return booksFromStorage
-// }
 
 function getCurrency(currencyCode) {
   var sign = ''

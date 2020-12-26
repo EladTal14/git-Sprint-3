@@ -3,7 +3,7 @@
   position: absolute;
   top:25.3vh;
   right: 3vw;
-  z-index: 10;
+  z-index: 100;
 }
 .email-compose header{
   background-color: rgb(58, 56, 56);
@@ -47,6 +47,8 @@
 }
 .email-compose form .actions a.trash{
   background-color:unset;
+  position: relative;
+  top: -0.2vh;
 }
 .btn-box {
   -webkit-border-radius: 2px;
@@ -88,4 +90,13 @@
   background-image: linear-gradient(top,#4d90fe,#357ae8);
   border: 1px solid #2f5bb7;
   border-bottom-color: #2f5bb7;
+  }
+  @media(max-width:760px){
+    .email-compose{
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      top:87.4vh;
+      max-width: 300px;
+    }
   }

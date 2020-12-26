@@ -15,7 +15,6 @@ export class KeepApp extends React.Component {
   }
 
   componentDidMount() {
-    console.log('Page is ready');
     this.loadNotes()
   }
 
@@ -27,7 +26,7 @@ export class KeepApp extends React.Component {
   addNote = (note) => {
     keepService.addNote(note)
       .then(addedNote => this.setState({ notes: [addedNote, ...this.state.notes] }))
-      .then(()=> eventBusService.emit('showMsg', 'Note Added'))
+      .then(() => eventBusService.emit('showMsg', 'Note Added'))
   }
 
   deleteNote = (noteId) => {
@@ -40,9 +39,9 @@ export class KeepApp extends React.Component {
       .then(() => this.loadNotes())
   }
 
-    onSetFilter = (filterBy) => {
-      this.setState({ filterBy });
-    }
+  onSetFilter = (filterBy) => {
+    this.setState({ filterBy });
+  }
 
   get notesToDisplay() {
     const { notes, filterBy } = this.state
@@ -54,10 +53,9 @@ export class KeepApp extends React.Component {
   render() {
     const notesToShow = this.notesToDisplay
     return <section className="keep-app">
-      {/* <h1>Your Notes!</h1> */}
       <NoteFilter filterBy={this.state.filterBy} onSetFilter={this.onSetFilter} />
       <AddNote addNote={this.addNote} />
-      <NotesList notes={notesToShow} deleteNote={this.deleteNote} togglePin={this.togglePin}/>
+      <NotesList notes={notesToShow} deleteNote={this.deleteNote} togglePin={this.togglePin} />
     </section>
 
   }

@@ -1,18 +1,15 @@
 import { NotePreview } from "./NotePreview.jsx"
+export function NotesList({ notes, deleteNote, togglePin }) {
+    const pinnedNotes = notes.filter(note => note.isPinned)
+    const unPinnedNotes = notes.filter(note => !note.isPinned)
 
-export function NotesList({notes, deleteNote, togglePin}) {
-
-  const pinnedNotes = notes.filter(note => note.isPinned)
-  const unPinnedNotes = notes.filter(note => !note.isPinned)
-  // console.log('pinned', pinnedNotes, 'unpinned', unPinnedNotes);
-  
-  return <section className="notes-list">
+    return <section className="notes-list">
         {pinnedNotes.map(note => {
-            return <NotePreview key={note.id} note={note} deleteNote={deleteNote} togglePin={togglePin}/>
+            return <NotePreview key={note.id} note={note} deleteNote={deleteNote} togglePin={togglePin} />
         })}
         {unPinnedNotes.map(note => {
-            return <NotePreview key={note.id} note={note} deleteNote={deleteNote} togglePin={togglePin}/>
+            return <NotePreview key={note.id} note={note} deleteNote={deleteNote} togglePin={togglePin} />
         })}
-        </section>
+    </section>
 
 }

@@ -9,7 +9,6 @@ export class BookAdd extends React.Component {
     }
 
     handelChange = ({ target }) => {
-        console.log(target.value);
         this.setState({
             [target.name]: target.value,
         }, () => networkBookService.getNetworkBooks(this.name)
@@ -18,11 +17,9 @@ export class BookAdd extends React.Component {
                     searchBooks: books
                 })
             }))
-
     }
 
     addBook = (book) => {
-        console.log(this.state);
         this.props.addBook(book)
         eventBusService.emit('showMsg', 'Book Added')
     }
@@ -39,7 +36,6 @@ export class BookAdd extends React.Component {
                         return <li key={book.id} >{book.volumeInfo.title}
                             <button className="book-btn" onClick={() => this.addBook(book)} className="new-btn">+</button>
                         </li>
-
                     })}
                 </ul>}
 

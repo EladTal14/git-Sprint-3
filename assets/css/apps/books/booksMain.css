@@ -12,7 +12,6 @@ a::after{
     width: 70px;
     height: 35px;
     background-color: #dcebf8;
-    /* border: #617380 1px solid; */
     border: none;
     outline: none;
     border-radius: 5px;
@@ -88,7 +87,6 @@ a::after{
 .book-details{
     background-color: #5e7280;
     max-width: 600px;
-    /* height: 100vh; */
     padding: 10px;
     margin: 20px auto;
     text-align: center;
@@ -104,7 +102,6 @@ a::after{
 }
 
 .page-btn{
-    /* max-width: 500px; */
     display: flex;
     justify-content: space-between;
     width: 300px;
@@ -261,11 +258,6 @@ input[name=name]{
     margin: 20px auto;
     text-align: center;
 }
-
-
-/* .book-filter-box input:not(:last-child){
-    border-right: 1px solid #49555e ;
-} */
 
 @media (min-width: 720px){
 

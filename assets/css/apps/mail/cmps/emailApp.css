@@ -4,11 +4,6 @@
   margin: 14px 20px;
 }
 
-.email-app .main-content .actions-filters {
-  /* border: 2px solid black;
-  margin-left: 5px; */
-}
-
 .email-app .main-content .actions-filters a {
   cursor: pointer;
   background-color: #f0f5f9;

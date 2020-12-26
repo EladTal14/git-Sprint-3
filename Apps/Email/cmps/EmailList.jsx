@@ -1,7 +1,5 @@
-
 import { EmailPreview } from "./EmailPreview.jsx";
 export function EmailList({ emails, editEmail, readUnread, removeEmail }) {
-
   return (
     <section className="email-list">
       <ul className="clean-list flex column ">

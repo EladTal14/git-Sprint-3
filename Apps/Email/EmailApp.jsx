@@ -32,7 +32,7 @@ export class EmailApp extends React.Component {
 
   loadEmails = () => {
     emailService.query()
-      .then(emails => this.setState({ emails }, () => console.log(this.state.emails)))
+      .then(emails => this.setState({ emails }))
   }
 
   onSetFilter = (filterBy) => {
@@ -86,7 +86,6 @@ export class EmailApp extends React.Component {
   render() {
     const emailsForDisplay = this.emailsForDisplay
     const { isListShow } = this.state
-
     return <section className="email-app">
       <EmailFilter setFilter={this.onSetFilter} />
       <EmailSort setSort={this.onSetSort} />

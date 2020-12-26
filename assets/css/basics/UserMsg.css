@@ -13,3 +13,17 @@
 .animate__animated.animate__bounceOut {
   --animate-duration: 2s;
 }
+@media(max-width:860px){
+  .user-msg{
+    font-size: 0.5rem;
+    top: 3.5vh;
+    left: 34vw;
+    
+  }
+}
+@media(max-width:1080px){
+  .user-msg{
+    font-size: 1.5rem ;
+    
+  }
+}

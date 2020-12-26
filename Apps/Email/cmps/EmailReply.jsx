@@ -1,4 +1,3 @@
-
 import { emailService } from '../services/emailService.js'
 export class EmailReply extends React.Component {
   state = {
@@ -15,9 +14,7 @@ export class EmailReply extends React.Component {
     this.setState({ body });
   };
   Send = () => {
-    console.log(this.props);
     this.setState({ isReply: !this.state.isReply }, () => {
-
       let body = this.props.emailBody
       body += '\n\n You replied: \n\n' + this.state.body
       emailService.addReply(body, this.props.emailId)
@@ -32,7 +29,6 @@ export class EmailReply extends React.Component {
           onChange={this.handleChange} autoFocus required>
         </textarea>
         <button onClick={this.Send}>Send reply</button>
-
       </div>
     )
   }

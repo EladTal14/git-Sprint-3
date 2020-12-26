@@ -10,8 +10,6 @@ export const emailService = {
   sortBy,
   addReply
 }
-
-
 var emails;
 const KEY = 'emailsDB'
 
@@ -20,7 +18,6 @@ _createEmails()
 function _createEmails() {
   emails = storageService.loadFromStorage(KEY);
   if (!emails || !emails.length) {
-    // Nothing in localStorage, use demo data
     emails = _demoEmails();
     _saveEmailsToStorage();
     return Promise.resolve(emails);
@@ -87,7 +84,6 @@ function addEmailToInbox(email) {
 function addReply(body, emailId) {
   let email = emails.find(email => email.id === emailId)
   const emailIdx = emails.findIndex(email => email.id === emailId)
-  console.log(email);
   email.body = body
   emails[emailIdx] = email
   _saveEmailsToStorage();
@@ -99,7 +95,7 @@ function _demoEmails() {
     { sendTo: 'elad', id: utilService.makeId(), subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: 1 },
     {
       sendTo: 'basya', id: utilService.makeId(), subject: 'hello dear alan ', body: `dsfsdj sdlfkj s fjksdj fsdfjlskd fjskldjfksdjfskld jfskldj fsdklfj sdklfjlsdjfskldjfklsdjflsdkjf
-    sdkjfhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhComputers, smartphones and interoint where we'd be stuck without them. soundly at night.`, isRead: true, sentAt: 2
+    sdkjfs, seroint where we'd be stuck without them. soundly at night.`, isRead: true, sentAt: 2
     },
     { sendTo: 'yaron', id: utilService.makeId(), subject: 'Linkedin job alerts', body: 'come work for us at wix', isRead: false, sentAt: 3 },
     { sendTo: 'avi', id: utilService.makeId(), subject: 'Come Back to Instagram', body: 'we miss you at insta come look at new pics of your friends', isRead: false, sentAt: 4 },

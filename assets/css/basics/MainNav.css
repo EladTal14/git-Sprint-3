@@ -4,7 +4,6 @@
     color: #f0f5f9;
     padding: 5px 10px;
     align-items: center;
-    /* margin-bottom: 20px; */
 }
 
 @media (max-width: 760px){
@@ -47,7 +46,6 @@
     color: #f0f5f9;
     padding: 5px 10px;
     align-items: center;
-    /* margin-top: 20px; */
     text-align: center;
     line-height: 80px;
 }

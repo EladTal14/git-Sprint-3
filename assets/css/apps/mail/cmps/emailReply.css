@@ -6,7 +6,9 @@
 }
 
 .reply-body button{
+  background-color: #63737e;
   outline: none;
+  border: 0;
   cursor: pointer;
   width:102px;
   height: 35px;

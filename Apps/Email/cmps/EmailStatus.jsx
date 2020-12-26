@@ -5,16 +5,13 @@ export class EmailStatus extends React.Component {
   componentDidMount() {
     this.setState({ unreadEmails: this.props.unreadEmails })
   }
-
   refInput = React.createRef();
-
   onChange = () => {
     this.refInput.current
   }
   render() {
-    const { unreadEmails } = this.state
     return (
-      <div className="progress">
+      <div>
       </div>
     )
   }

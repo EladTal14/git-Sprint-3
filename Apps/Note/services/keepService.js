@@ -11,27 +11,22 @@ export const keepService = {
     togglePin,
     updateLable,
     saveNewTodo,
-    // save,
-    // getById,
 };
 
 var gNotes;
 _createNotes();
 
 function _createNotes() {
-    // Try loading from localStorage
     gNotes = storageService.loadFromStorage(KEY);
     if (!gNotes || !gNotes.length) {
-        // Nothing in localStorage, use demo data
         gNotes = _getDemoNotes()
         _saveNotesToStorage();
     }
 }
 
-function addNote(newNote){
-    console.log('adding new note', newNote);
+function addNote(newNote) {
     var newInfo = {}
-    switch (newNote.type){
+    switch (newNote.type) {
         case "NoteText":
             newInfo.txt = newNote.note
             break;
@@ -41,80 +36,76 @@ function addNote(newNote){
         case "NoteTodos":
             var todosTxt = newNote.note.split(',')
             newInfo.todos = todosTxt.reduce((acc, todo) => {
-                acc.push({txt: todo, doneAt: null, id: utilService.makeId()})
+                acc.push({ txt: todo, doneAt: null, id: utilService.makeId() })
                 return acc
             }, [])
             break
     }
-    const newNoteToAdd = {id:utilService.makeId(), type: newNote.type, info: newInfo, style: 'lightskyblue'}
+    const newNoteToAdd = { id: utilService.makeId(), type: newNote.type, info: newInfo, style: 'lightskyblue' }
     gNotes = [newNoteToAdd, ...gNotes]
-    console.log(newInfo)
     _saveNotesToStorage()
     return Promise.resolve(newNoteToAdd)
 }
 
-function deleteNote(noteId){
-   gNotes = gNotes.filter(note => note.id !== noteId)
-   _saveNotesToStorage()
-   return Promise.resolve()
+function deleteNote(noteId) {
+    gNotes = gNotes.filter(note => note.id !== noteId)
+    _saveNotesToStorage()
+    return Promise.resolve()
 }
 
-function togglePin(noteId){
+function togglePin(noteId) {
     const note = gNotes.find(note => note.id === noteId)
     const idx = gNotes.findIndex(note => note.id === noteId)
     note.isPinned = !note.isPinned
-    const notesToUpdate = [... gNotes]
+    const notesToUpdate = [...gNotes]
     notesToUpdate[idx] = note
     gNotes = notesToUpdate
     _saveNotesToStorage()
     return Promise.resolve(notesToUpdate)
 }
 
-
-function updateTxt(newTxt,noteId ){
-    // console.log('txt', newTxt, 'id', noteId);
+function updateTxt(newTxt, noteId) {
     const note = gNotes.find(note => note.id === noteId)
     const idx = gNotes.findIndex(note => note.id === noteId)
-    const noteToUpdate = {...note}
+    const noteToUpdate = { ...note }
     noteToUpdate.info.txt = newTxt
-    const notesToUpdate = [... gNotes]
-    notesToUpdate[idx] = noteToUpdate
-    gNotes = notesToUpdate
-    _saveNotesToStorage()
-    return Promise.resolve(noteToUpdate)    
-}
-
-function saveNewTodo(newTodo, noteId){
-    const note = gNotes.find(note => note.id === noteId)
-    const idx = gNotes.findIndex(note => note.id === noteId)
-    const noteToUpdate = {...note}
-    const notesToUpdate = [... gNotes]
-    noteToUpdate.info.todos.unshift({txt: newTodo, doneAt: null, id: utilService.makeId(), isDone: false})
-    notesToUpdate[idx] = noteToUpdate
-    gNotes = notesToUpdate
-    _saveNotesToStorage()
-    return Promise.resolve(noteToUpdate) 
-}
-
-function saveColor(color, noteId){
-    console.log('color', color, 'id', noteId);
-    const note = gNotes.find(note => note.id === noteId)
-    const idx = gNotes.findIndex(note => note.id === noteId)
-    const noteToUpdate = {...note}
-    noteToUpdate.style = color
-    const notesToUpdate = [... gNotes]
+    const notesToUpdate = [...gNotes]
     notesToUpdate[idx] = noteToUpdate
     gNotes = notesToUpdate
     _saveNotesToStorage()
     return Promise.resolve(noteToUpdate)
 }
 
-function updateLable(newLabel,noteId){
+function saveNewTodo(newTodo, noteId) {
     const note = gNotes.find(note => note.id === noteId)
     const idx = gNotes.findIndex(note => note.id === noteId)
-    const noteToUpdate = {...note}
+    const noteToUpdate = { ...note }
+    const notesToUpdate = [...gNotes]
+    noteToUpdate.info.todos.unshift({ txt: newTodo, doneAt: null, id: utilService.makeId(), isDone: false })
+    notesToUpdate[idx] = noteToUpdate
+    gNotes = notesToUpdate
+    _saveNotesToStorage()
+    return Promise.resolve(noteToUpdate)
+}
+
+function saveColor(color, noteId) {
+    const note = gNotes.find(note => note.id === noteId)
+    const idx = gNotes.findIndex(note => note.id === noteId)
+    const noteToUpdate = { ...note }
+    noteToUpdate.style = color
+    const notesToUpdate = [...gNotes]
+    notesToUpdate[idx] = noteToUpdate
+    gNotes = notesToUpdate
+    _saveNotesToStorage()
+    return Promise.resolve(noteToUpdate)
+}
+
+function updateLable(newLabel, noteId) {
+    const note = gNotes.find(note => note.id === noteId)
+    const idx = gNotes.findIndex(note => note.id === noteId)
+    const noteToUpdate = { ...note }
     noteToUpdate.info.label = newLabel
-    const notesToUpdate = [... gNotes]
+    const notesToUpdate = [...gNotes]
     notesToUpdate[idx] = noteToUpdate
     gNotes = notesToUpdate
     _saveNotesToStorage()
@@ -125,10 +116,9 @@ function query() {
     return Promise.resolve(gNotes);
 }
 
-
 function _getDemoNotes() {
     const notes = [
-        {   
+        {
             id: utilService.makeId(),
             type: "NoteText",
             isPinned: true,
@@ -172,7 +162,7 @@ function _getDemoNotes() {
             },
             style: "lightsteelblue"
         },
-        {   
+        {
             id: utilService.makeId(),
             type: "NoteText",
             isPinned: false,
@@ -206,7 +196,7 @@ function _getDemoNotes() {
             style: "lightpink"
 
         },
-        {   
+        {
             id: utilService.makeId(),
             type: "NoteText",
             isPinned: false,

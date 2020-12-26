@@ -1,4 +1,3 @@
-
 export class EmailSort extends React.Component {
   state = {
     sortBy: {
@@ -18,7 +17,6 @@ export class EmailSort extends React.Component {
   };
 
   render() {
-
     return (
       <section className="sort-by">
         <label htmlFor="sort" >
