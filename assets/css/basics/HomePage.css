@@ -6,10 +6,11 @@
     background-size: cover;
     margin: 0;
     text-align: center;
+    
 }
 
 .h-container{
-    height: 300px;
+    height: 350px;
     padding: 50px 20px;
     display: flex;
     flex-direction: column;

@@ -12,6 +12,9 @@ export class AddNote extends React.Component {
   onAddNote = (ev) => {
     ev.preventDefault();
     this.props.addNote(this.state.newCmp)
+    const copyCmp = {... this.state.newCmp}
+    copyCmp.note = ''
+    this.setState({newCmp: copyCmp})
   }
 
   onInputChange = (ev) => {

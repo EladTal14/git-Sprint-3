@@ -175,7 +175,7 @@ function _getDemoNotes() {
             type: "NoteVideo",
             isPinned: false,
             info: {
-                url: 'https://www.youtube.com/embed/watch?v=BjhW3vBA1QU',
+                url: 'https://www.youtube.com/embed/watch?v=XseIJg8Vyj0',
                 txt: "My new favorite song"
             },
             style: "#ffffd2"

@@ -27,7 +27,7 @@ export class KeepApp extends React.Component {
   addNote = (note) => {
     keepService.addNote(note)
       .then(addedNote => this.setState({ notes: [addedNote, ...this.state.notes] }))
-      .then(()=> eventBusService.emit('showMsg', 'The Book Add Successfully'))
+      .then(()=> eventBusService.emit('showMsg', 'The Note Added Successfully!'))
   }
 
   deleteNote = (noteId) => {
