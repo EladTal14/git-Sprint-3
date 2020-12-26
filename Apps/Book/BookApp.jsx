@@ -31,7 +31,7 @@ export class BookApp extends React.Component {
 
     onAddBook = (book) => {
         bookService.addBook(book)
-            .then(books => this.setState({books}))
+            .then(books => this.setState({ books }))
         // this.loadBooks()
     }
 
@@ -62,7 +62,7 @@ export class BookApp extends React.Component {
         return (
             <section className="book-app">
                 <BookFilter filterBy={this.state.filterBy} onSetFilter={this.onSetFilter} />
-                <BookAdd addBook={this.onAddBook}/>
+                <BookAdd addBook={this.onAddBook} />
                 <BookList books={booksToShow} />
 
             </section>
