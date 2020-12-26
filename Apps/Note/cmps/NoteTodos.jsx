@@ -9,7 +9,6 @@ export class NoteTodos extends React.Component {
   }
 
   componentDidMount() {
-    console.log('Page is ready');
     this.loadTodos()
     this.loadColor()
   }
@@ -17,7 +16,7 @@ export class NoteTodos extends React.Component {
   loadTodos = () => {
     this.setState({
       todos: this.props.info.todos
-    }, () => console.log(this.state.todos))
+    })
   }
 
   loadColor = () => {
@@ -42,6 +41,7 @@ export class NoteTodos extends React.Component {
   onAddTodo = () => {
     keepService.saveNewTodo(this.state.newTodo, this.props.id)
       .then(() => this.loadTodos())
+      .then(() => this.setState({newTodo: ''}))
   }
 
   onDeleteNote = (noteId) => {

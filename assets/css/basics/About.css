@@ -1,6 +1,6 @@
 .about-page{
-    background-image: url("../../img/about.jpg");
-    height: 80vh;
+    background-image: url("../../img/about2.jpg");
+    height: 71vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -9,8 +9,8 @@
 }
 
 .about-container{
-    padding: 50px 20px 270px;
-    height: 620px;
+    padding: 50px 20px 220px;
+    height: 500px;
     color: white;
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@
 
 .about-header{
     font-family: ClickeScript, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    margin: 5px auto;
+    margin: auto;
     font-size: 5rem;
     
 }

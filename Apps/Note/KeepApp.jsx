@@ -21,13 +21,13 @@ export class KeepApp extends React.Component {
 
   loadNotes = () => {
     keepService.query()
-      .then(notes => this.setState({ notes }, () => console.log(notes)))
+      .then(notes => this.setState({ notes }))
   }
 
   addNote = (note) => {
     keepService.addNote(note)
       .then(addedNote => this.setState({ notes: [addedNote, ...this.state.notes] }))
-      .then(()=> eventBusService.emit('showMsg', 'The Note Added Successfully!'))
+      .then(()=> eventBusService.emit('showMsg', 'Note Added'))
   }
 
   deleteNote = (noteId) => {

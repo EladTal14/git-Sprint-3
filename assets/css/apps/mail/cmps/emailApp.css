@@ -1,5 +1,9 @@
 /* email-app */
 
+.email-app .main-content{
+  margin: 20px;
+}
+
 .email-app .main-content .actions-filters {
   border: 2px solid black;
   margin-left: 5px;
