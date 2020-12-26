@@ -71,6 +71,7 @@ a::after{
 
 .book-preview img{
     width: 200px;
+    height: 266.66px;
 }
 
 .book-details{
@@ -114,6 +115,7 @@ a::after{
 .book-img{
     margin-top: 10px;
     width: 230px;
+   
 }
 
 .sale-img{

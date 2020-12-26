@@ -10,12 +10,10 @@ export class BookDetails extends React.Component {
     };
 
     componentDidMount() {
-        console.log('this.props:', this.props);
         this.loadBook()
     }
 
     componentDidUpdate(prevProps) {
-        console.log('UPDATE', this.props);
         if (prevProps.match.params.bookId !== this.props.match.params.bookId) {
             this.loadBook()
         }
@@ -62,16 +60,11 @@ export class BookDetails extends React.Component {
     addReview = (review) => {
         bookService.saveReview(this.state.book, review)
             .then(book => this.setState({ book }))
-        // this.loadBook()
     }
-
-
 
     render() {
         if (!this.state.book) return <div>Loading...</div>
         const { book } = this.state
-        // const prevBook = bookService.getPrevBook(book.id).then(bookId => prevBook = bookId)
-        // const nextBook = bookService.getNextBook(book.id).then(bookId => nextBook = bookId)
         const prevBook = bookService.getPrevBook(book.id)
         const nextBook = bookService.getNextBook(book.id)
         return (<section className="book-container">
@@ -90,8 +83,6 @@ export class BookDetails extends React.Component {
                 <ReviewsShow book={book} />
                 <button className="book-btn" onClick={this.onClose}>Close</button>
             </div>
-
-
             <Link to={`/book/${nextBook}`}>
                 <button className="book-btn" >Next Book</button>
             </Link>

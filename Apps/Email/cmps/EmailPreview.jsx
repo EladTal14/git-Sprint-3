@@ -42,7 +42,7 @@ export class EmailPreview extends React.Component {
 
       <Link to={`/email/${email.id} `} onClick={this.editEmail}  >
         <li className={`${(isRead) ? "is-read" : ''} email-preview `}>
-          <span>{email.sendTo} </span><span>{email.body}</span>
+          <span>{email.sendTo} </span><span>{utilService.shortText(email.body, 20)}</span>
           <div className="time-and-actions">
             <span>{time}</span>
             <button onClick={this.removeEmail}><img src="./assets/css/apps/mail/img/trash.png" alt="" /></button>

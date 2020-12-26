@@ -15,8 +15,14 @@
 
 .nav-list a {
     color: #f0f5f9;
+  
 }
-
+.nav-list a.my-active {
+    color: #52616b;
+    background-color:#f0f5f9 ;
+    border-radius: 5px;
+    padding: 5px;
+}
 .main-header h1 {
     font-family: ClickeScript, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 0 5px;

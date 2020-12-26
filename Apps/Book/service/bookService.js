@@ -12,10 +12,8 @@ export const bookService = {
 }
 
 const KEY = 'booksDB';
-// const KEY2 = 'newBooks'
 
 var gBooks = _createBooks()
-// window.theBooks = books
 var newBooks = [{
   kind: "books#volume",
   id: "hu9uinhsI2QC",
@@ -785,7 +783,6 @@ function getPrevBook(bookId) {
 function getNextBook(bookId) {
   let idx = gBooks.findIndex(book => book.id === bookId)
   if (idx === gBooks.length - 1) idx = 0
-  // return Promise.resolve(gBooks[idx+1].id);
   return gBooks[idx + 1].id
 }
 
