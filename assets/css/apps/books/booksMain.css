@@ -19,10 +19,6 @@ a::after{
     text-align: center;
 }
 
-.home-page h1{
-    font-size: 1.75rem;
-}
-
 .home-page img{
     width: 400px;
     margin-top: 10px;
@@ -42,9 +38,6 @@ a::after{
     margin: auto;
 }
 
-.main-header{
-    margin: 5px 10px;
-}
 
 .books-list{
     display: grid;
