@@ -32,6 +32,7 @@ export class KeepApp extends React.Component {
   deleteNote = (noteId) => {
     keepService.deleteNote(noteId)
       .then(() => this.loadNotes())
+      .then(()=> eventBusService.emit('showMsg', 'Note Deleted'))
   }
 
   togglePin = (noteId) => {

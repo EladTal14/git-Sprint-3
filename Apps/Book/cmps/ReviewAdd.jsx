@@ -10,6 +10,9 @@ export class ReviewAdd extends React.Component {
     onAddReview = (ev) => {
         ev.preventDefault();
         this.props.addReview(this.state.review)
+        const copyReview = { ... this.state.review }
+        copyReview.fullName = ''
+        this.setState({ review: copyReview })
     }
 
     onInputChange = (ev) => {
