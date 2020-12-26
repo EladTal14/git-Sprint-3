@@ -51,3 +51,13 @@
 .side-bar.actions-filters .my-active {
   background-color: red;
 }
+@media (max-width:760px){
+  .side-bar{
+    max-width: 326px;
+    margin: 0 auto;
+  }
+  .side-bar.actions-filters .compose{
+    width: 95%;
+    max-width: 292px;
+  }
+}

@@ -21,7 +21,8 @@
 }
 .note-card:hover{
     transform: scale(1.02); 
-    box-shadow: 2px 4px 9px 8px rgba(0,0,0,0.66);
+    box-shadow: 0 0 10px 4px rgb(0 0 0 / 0.5)
+    ;
 }
 .txt-note{
     height: 200px;
@@ -32,7 +33,6 @@
 .new-todo-add{
     margin: 10px auto;
     text-align: center;
-    /* background-color: #f0f5f9; */
     width: 230px;
     border-radius: 100px;
 }

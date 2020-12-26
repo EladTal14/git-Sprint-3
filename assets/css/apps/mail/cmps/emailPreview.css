@@ -35,4 +35,9 @@ li.email-preview {
   display: flex;
   justify-content: space-between;
 }
-
+@media(max-width:800px){
+  li .time-and-actions {
+    display: flex;
+    flex-direction: column;
+  }
+}
