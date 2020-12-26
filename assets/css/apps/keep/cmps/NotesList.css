@@ -15,9 +15,13 @@
     flex-direction: column;
     justify-content: space-around;
     margin-bottom: 5px;
-    transition: 2s;
+    transition: all 1s ease-in-out;
+    
 }
-
+.note-card:hover{
+    transform: scale(1.1); 
+    box-shadow: 2px 4px 9px 8px rgba(0,0,0,0.66);
+}
 .txt-note{
     height: 200px;
 }
