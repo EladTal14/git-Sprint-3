@@ -88,23 +88,21 @@ body.open-menu .main-screen {
         right: 0;
         top: 0;
         height: 100vh;
-        background-color: #52616b;
-        border-left: 1px solid #d6d6d6;
+        background-color: #52616be0;
+        margin-top: 0;
         flex-direction: column;
         transform: translateX(100%);
-        
+        z-index: 100;
         transition: transform .8s;
+        justify-content: space-around;
+        
     }
 
     body.open-menu .nav-list {
         transform: translateX(0);
     }
 
-    .nav-list li{
-        width: 130px;
-    }
     .nav-list a {
-        width: 100px;
         display: block;
         text-align: center;
         padding: 1.125rem 0;

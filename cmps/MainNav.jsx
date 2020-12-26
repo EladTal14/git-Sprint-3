@@ -1,9 +1,7 @@
 const { NavLink } = ReactRouterDOM;
 
 export function MainNav() {
-  function toggleMenu() {
-    document.body.classList.toggle('open-menu');
-  }
+
 
   return (
 
@@ -27,3 +25,10 @@ export function MainNav() {
   )
 }
 
+
+
+
+
+function toggleMenu() {
+  document.body.classList.toggle('open-menu');
+}
