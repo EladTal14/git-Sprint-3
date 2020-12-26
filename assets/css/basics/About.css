@@ -27,8 +27,29 @@
 }
 
 .about-container p{
-    width: 500px;
-    margin: 0 auto;
+    width: 300px;
+    margin: 0 15px;
     font-size: 1.125rem;
     font-weight: 500;
+}
+
+ /* NARROW */
+
+ @media (min-width: 600px){
+
+    .about-container p{
+        width: 500px;
+        margin: 0 auto;
+    }
+}
+
+ /* WIDE */
+
+@media (min-width: 1000px){
+
+    .about-container p{
+        width: 600px;
+        margin: 0 auto;
+
+    }
 }

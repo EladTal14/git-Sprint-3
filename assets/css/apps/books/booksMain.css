@@ -42,12 +42,6 @@ a::after{
     margin: 10px;
 }
 
-.about-page p{
-    width: 600px;
-    margin: auto;
-}
-
-
 .books-list{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));

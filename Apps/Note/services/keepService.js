@@ -125,14 +125,14 @@ function _getDemoNotes() {
             info: {
                 txt: "Fullstack Me Baby!"
             },
-            style: "lightgreen"
+            style: "#9ff59f"
         },
         {
             id: utilService.makeId(),
             type: "NoteVideo",
             isPinned: false,
             info: {
-                url: 'https://www.youtube.com/embed/watch?v=zZjSX01P5dE',
+                url: 'https://www.youtube.com/embed/3X9wEwulYhk',
                 txt: "My new favorite song"
             },
             style: "#fefdca"
@@ -143,7 +143,7 @@ function _getDemoNotes() {
             type: "NoteImg",
             isPinned: true,
             info: {
-                url: './assets/img/dog.jpg',
+                url: './assets/img/belle1.jpeg',
                 txt: "My Dog playing"
             },
             style: "lightpink"
@@ -169,7 +169,7 @@ function _getDemoNotes() {
             info: {
                 txt: "I miss the summer!!"
             },
-            style: "lightgreen"
+            style: "#9ff59f"
         },
         {
             id: utilService.makeId(),
@@ -205,6 +205,25 @@ function _getDemoNotes() {
             },
             style: "lightgreen"
         },
+        {
+            id: utilService.makeId(),
+            type: "NoteVideo",
+            isPinned: false,
+            info: {
+                url: 'https://www.youtube.com/embed/lWA2pjMjpBs', 
+                txt: "Party!!"
+            },
+            style: "#fefdca"
+        },
+        {
+            id: utilService.makeId(),
+            type: "NoteText",
+            isPinned: false,
+            info: {
+                txt: "Whatching now: Dark, Dark is a German science fiction thriller"
+            },
+            style: "lightgreen"
+        },
     ];
     return notes;
 }
@@ -212,3 +231,5 @@ function _getDemoNotes() {
 function _saveNotesToStorage() {
     storageService.saveToStorage(KEY, gNotes)
 }
+
+// https://www.youtube.com/embed/I3qvi4wHNns
