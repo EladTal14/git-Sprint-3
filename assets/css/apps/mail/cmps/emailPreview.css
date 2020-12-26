@@ -3,6 +3,8 @@
   border: 1px solid rgb(189, 180, 180);
   padding: 8px;
   margin-bottom: 3px;
+  font-weight: 600;
+  color: #121213
 }
 
 .email-preview:hover{

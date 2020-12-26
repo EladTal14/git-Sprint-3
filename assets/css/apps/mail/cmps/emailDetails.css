@@ -1,10 +1,11 @@
 /* email-details */
 .email-details{
-  margin-bottom: 76px;
+  margin: 50px 20px;
 }
 .email-details .email-body{
   flex-grow: 1;
-  margin-left: 10px;
+  margin-left: 20px;
+  padding: 10px;
   text-align: center;
   position: relative;
   display:flex;
@@ -23,6 +24,15 @@
 .email-details .email-body pre{
   flex-grow: 8;
   overflow-y: scroll;
+  max-width: 700px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: Montserrat;
+  font-size: 1.125rem;
+  margin: auto;
+  padding: 10px 15px;
+  border: 1px solid #63737e;
+  border-radius: 5px;
 }
 .email-details .email-body pre::-webkit-scrollbar {
   display: none;
