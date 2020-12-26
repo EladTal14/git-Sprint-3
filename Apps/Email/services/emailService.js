@@ -13,7 +13,7 @@ export const emailService = {
 
 
 var emails;
-const KEY = 'emailDB'
+const KEY = 'emailsDB'
 
 _createEmails()
 

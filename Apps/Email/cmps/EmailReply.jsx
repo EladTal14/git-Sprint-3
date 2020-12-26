@@ -15,13 +15,14 @@ export class EmailReply extends React.Component {
     this.setState({ body });
   };
   Send = () => {
+    console.log(this.props);
     this.setState({ isReply: !this.state.isReply }, () => {
 
       let body = this.props.emailBody
       body += '\n\n You replied: \n\n' + this.state.body
       emailService.addReply(body, this.props.emailId)
         .then((email) => this.props.send(email))
-
+        .then(() => this.props.reply())
     })
   }
   render() {

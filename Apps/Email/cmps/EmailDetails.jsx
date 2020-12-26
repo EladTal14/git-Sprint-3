@@ -50,7 +50,7 @@ export class EmailDetails extends React.Component {
             {email.body}
           </pre>
           {(!isReply) && <div className="invisible"></div>}
-          {isReply && <EmailReply emailBody={email.body} emailId={email.id} isReply={isReply} send={this.onSend} />}
+          {isReply && <EmailReply emailBody={email.body} emailId={email.id} reply={this.onReply} isReply={isReply} send={this.onSend} />}
 
           <div className="actions">
             <button onClick={this.onDeleteEmail} className="delete">Delete Email</button>

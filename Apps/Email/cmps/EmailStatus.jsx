@@ -15,9 +15,6 @@ export class EmailStatus extends React.Component {
     const { unreadEmails } = this.state
     return (
       <div className="progress">
-        <div className="progress-done" ref={this.refInput} data-done={`${unreadEmails}`}>
-          ${unreadEmails}
-        </div>
       </div>
     )
   }
