@@ -22,7 +22,6 @@ export class BookAdd extends React.Component {
     }
 
     addBook = (book) => {
-        console.log(this.state);
         this.props.addBook(book)
         eventBusService.emit('showMsg', 'Book Added')
     }

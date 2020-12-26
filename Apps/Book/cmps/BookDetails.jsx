@@ -1,6 +1,7 @@
 import { bookService } from '../service/bookService.js';
 import { ReviewAdd } from '../../Book/cmps/ReviewAdd.jsx';
 import { ReviewsShow } from '../../Book/cmps/ReviewsShow.jsx';
+import { eventBusService } from "../../../services/eventBusService.js";
 const { Link } = ReactRouterDOM;
 
 export class BookDetails extends React.Component {
@@ -60,6 +61,7 @@ export class BookDetails extends React.Component {
     addReview = (review) => {
         bookService.saveReview(this.state.book, review)
             .then(book => this.setState({ book }))
+            .then(() => eventBusService.emit('showMsg', 'Review Added'))
     }
 
     render() {
