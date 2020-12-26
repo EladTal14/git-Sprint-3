@@ -10,3 +10,21 @@
 .keep-app h1{
     margin: 5px;
 }
+
+ /* NARROW */
+
+@media (min-width: 600px){
+
+    .note-filter-box{
+        margin: 5px auto 10px;
+    }
+
+}
+
+ /* WIDE */
+
+@media (min-width: 1000px){
+    .note-filter-box{
+        margin: 5px auto 10px;
+    }
+}

@@ -1,8 +1,9 @@
 .note-filter-box{
-    margin: 5px auto 10px;
+    margin: 10px;
+    /* margin: 5px auto 10px; */
     text-align: center;
     background-color: #f0f5f9;
-    width: 400px;
+    max-width: 400px;
     border-radius: 100px;
 }
 
@@ -13,7 +14,7 @@
 }
 
 .filter-note-input{
-    width: 250px;
+    max-width: 250px;
     background-color: unset;
     border: 0;
     /* border-bottom: 2px solid #49555e; */
