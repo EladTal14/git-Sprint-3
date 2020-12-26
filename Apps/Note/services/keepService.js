@@ -137,22 +137,24 @@ function _getDemoNotes() {
             },
             style: "lightgreen"
         },
-        {   
+        {
             id: utilService.makeId(),
-            type: "NoteText",
+            type: "NoteVideo",
             isPinned: false,
             info: {
-                txt: "I miss the summer!!"
+                url: 'https://www.youtube.com/embed/watch?v=zZjSX01P5dE',
+                txt: "My new favorite song"
             },
-            style: "lightgreen"
+            style: "#fefdca"
+
         },
         {
             id: utilService.makeId(),
             type: "NoteImg",
             isPinned: true,
             info: {
-                url: 'https://miro.medium.com/max/1050/0*LFS-oAro8b1qmeH9.jpg',
-                txt: "Me playing Mi"
+                url: './assets/img/dog.jpg',
+                txt: "My Dog playing"
             },
             style: "lightpink"
 
@@ -170,16 +172,48 @@ function _getDemoNotes() {
             },
             style: "lightsteelblue"
         },
-        {
+        {   
             id: utilService.makeId(),
-            type: "NoteVideo",
+            type: "NoteText",
             isPinned: false,
             info: {
-                url: 'https://www.youtube.com/embed/watch?v=XseIJg8Vyj0',
-                txt: "My new favorite song"
+                txt: "I miss the summer!!"
             },
-            style: "#ffffd2"
+            style: "lightgreen"
+        },
+        {
+            id: utilService.makeId(),
+            type: "NoteTodos",
+            isPinned: true,
+            info: {
+                label: "Don\'t forget:",
+                todos: [
+                    { txt: "Have Fun", doneAt: null, id: utilService.makeId(), isDone: false },
+                    { txt: "Eat good", doneAt: 187111111, id: utilService.makeId(), isDone: true },
+                    { txt: "Take a nap", doneAt: 187111111, id: utilService.makeId(), isDone: false },
+                ]
+            },
+            style: "lightsteelblue"
+        },
+        {
+            id: utilService.makeId(),
+            type: "NoteImg",
+            isPinned: false,
+            info: {
+                url: './assets/img/view.jpg',
+                txt: "sooo beautiful"
+            },
+            style: "lightpink"
 
+        },
+        {   
+            id: utilService.makeId(),
+            type: "NoteText",
+            isPinned: false,
+            info: {
+                txt: "Sprint 3 is all most done!"
+            },
+            style: "lightgreen"
         },
     ];
     return notes;

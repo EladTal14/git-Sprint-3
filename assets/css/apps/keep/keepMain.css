@@ -19,6 +19,9 @@
         margin: 5px auto 10px;
     }
 
+    .note-card{
+        width: 330px;
+    }
 }
 
  /* WIDE */
@@ -26,5 +29,8 @@
 @media (min-width: 1000px){
     .note-filter-box{
         margin: 5px auto 10px;
+    }
+    .note-card{
+        width: 330px;
     }
 }

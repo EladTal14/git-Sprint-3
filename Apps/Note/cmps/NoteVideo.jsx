@@ -47,7 +47,7 @@ export class NoteVideo extends React.Component {
     return (
       <div className="video-note note-card" style={{ backgroundColor: color }}>
         <iframe width="260" height="230"
-          src={url}>
+          src={url} className="note-picture" >
         </iframe>
         {/* <h3>{txt}</h3> */}
         <input type="text" name="txt" value={txt} className="editble-title" onChange={this.onChangeTxt} style={{ backgroundColor: color }} placeholder="give me a title!"/>

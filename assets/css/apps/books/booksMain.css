@@ -8,11 +8,21 @@ a::after{
 }
 
 .book-btn{
+    margin-top: 5px;
     width: 70px;
     height: 35px;
     background-color: #dcebf8;
-    border: #617380 1px solid;
+    /* border: #617380 1px solid; */
+    border: none;
+    outline: none;
     border-radius: 5px;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.book-btn:hover{
+    transition: 0.7s;
+    background-color: #b9ddfc;
 }
 
 .home-page{
@@ -63,7 +73,7 @@ a::after{
 }
 .book-preview:hover{
     transform: scale(1.03); 
-    box-shadow: 2px 4px 9px 8px rgba(0,0,0,0.66);
+    box-shadow: 2px 3px 8px 4px rgba(34, 33, 33, 0.66)
 }
 .book-preview h1{
     font-size: 1.125rem;
@@ -77,7 +87,7 @@ a::after{
 
 .book-details{
     background-color: #5e7280;
-    width: 600px;
+    max-width: 600px;
     /* height: 100vh; */
     padding: 10px;
     margin: 20px auto;
@@ -86,9 +96,18 @@ a::after{
 
 .book-container{
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     max-width: 1000px;
     margin: auto;
+    align-items: center;
+}
+
+.page-btn{
+    /* max-width: 500px; */
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
 }
 
 .review-form{
@@ -212,7 +231,7 @@ input[name=name]{
 }
 
 .book-filter-box input, .new-book-filter input{
-    width: 250px;
+    max-width: 250px;
     background-color: unset;
     border: 0;
     border-bottom: 2px solid #49555e;
@@ -269,6 +288,10 @@ input[name=name]{
         border-right: 1px solid #49555e ;
     }
 
+    .page-btn{
+        width: 600px;
+    }
+
 
 }
 
@@ -289,6 +312,9 @@ input[name=name]{
 
     .book-filter-box{
         margin: 20px auto;
+    }
+    .page-btn{
+        width: 600px;
     }
 
 }

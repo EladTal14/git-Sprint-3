@@ -33,7 +33,7 @@ export class ReviewAdd extends React.Component {
                 </div>
                 <div>
                     <label htmlFor="" className="comment">Add a comment:</label>
-                    <textarea value={review.comment} onChange={this.onInputChange} name="comment" id="" cols="38" rows="13"></textarea>
+                    <textarea value={review.comment} onChange={this.onInputChange} name="comment" id="" cols="30" rows="10"></textarea>
                 </div>
                 <button className="book-btn add-btn" type="submit">Add</button>
             </form>

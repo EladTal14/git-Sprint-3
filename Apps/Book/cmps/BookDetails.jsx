@@ -68,9 +68,14 @@ export class BookDetails extends React.Component {
         const prevBook = bookService.getPrevBook(book.id)
         const nextBook = bookService.getNextBook(book.id)
         return (<section className="book-container">
-            <Link to={`/book/${prevBook}`}>
-                <button className="book-btn">Prev Book</button>
-            </Link>
+            <div className="page-btn">
+                <Link to={`/book/${prevBook}`}>
+                    <button className="book-btn">Prev Book</button>
+                </Link>
+                <Link to={`/book/${nextBook}`}>
+                    <button className="book-btn" >Next Book</button>
+                </Link>
+            </div>
             <div className="book-details">
                 {book.listPrice.isOnSale && <img className="sale-img" src="./assets/css/apps/books/img/sale.png" alt="" />}
                 <h1>{book.title}</h1>
@@ -83,9 +88,6 @@ export class BookDetails extends React.Component {
                 <ReviewsShow book={book} />
                 <button className="book-btn" onClick={this.onClose}>Close</button>
             </div>
-            <Link to={`/book/${nextBook}`}>
-                <button className="book-btn" >Next Book</button>
-            </Link>
         </section>
         )
 
