@@ -7,6 +7,12 @@
     /* margin-bottom: 20px; */
 }
 
+@media (max-width: 760px){
+    .nav-list{
+        width: 260px !important;
+    }
+}
+
 .nav-list {
     width: 410px;
     justify-content: space-between;
@@ -14,7 +20,6 @@
 
 .nav-list a {
     color: #f0f5f9;
-  
 }
 .nav-list a.my-active {
     color: #52616b;
