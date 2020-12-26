@@ -1,11 +1,14 @@
 const { NavLink } = ReactRouterDOM;
 
 export function MainNav() {
+  function toggleMenu() {
+    document.body.classList.toggle('open-menu');
+  }
 
   return (
 
     <nav className="main-header flex space-between">
-      <div class="main-screen" ></div>
+      <div className="main-screen" onClick={toggleMenu}></div>
       <div className="left-header flex">
         <img src="./assets/img/unicorn.png" alt="" />
         <h1>Appsus</h1>
@@ -18,7 +21,7 @@ export function MainNav() {
         <li><NavLink activeClassName="my-active" to="/book">Books</NavLink></li>
 
       </ul>
-      <button class="menu-btn"><img src="./assets/img/grid.png" /></button>
+      <button className="menu-btn" onClick={toggleMenu}><img src="./assets/img/grid.png" /></button>
     </nav>
 
   )
