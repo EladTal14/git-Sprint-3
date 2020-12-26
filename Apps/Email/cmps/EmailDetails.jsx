@@ -2,10 +2,12 @@ import { emailService } from '../services/emailService.js'
 import { EmailSideBar } from './EmailSideBar.jsx';
 import { EmailCompose } from './EmailCompose.jsx';
 import { eventBusService } from '../../../services/eventBusService.js'
+import { EmailReply } from './EmailReply.jsx';
 export class EmailDetails extends React.Component {
   state = {
     email: null,
-    isComopseShown: false
+    isComopseShown: false,
+    isReply: false
   }
   componentDidMount() {
     this.loadEmail();
@@ -28,9 +30,16 @@ export class EmailDetails extends React.Component {
       .then(() => this.onBack())
       .then(() => eventBusService.emit('showMsg', 'Email removed'))
   }
+
+  onReply = () => {
+    this.setState({ isReply: !this.state.isReply })
+  }
+  onSend = (email) => {
+    this.setState({ email })
+  }
   render() {
     if (!this.state.email) return <div>...loading</div>
-    const { email, isComopseShown } = this.state
+    const { email, isComopseShown, isReply } = this.state
     return (
       <section className="email-details flex">
         <EmailSideBar composeEmail={this.props.composeEmail} />
@@ -40,9 +49,12 @@ export class EmailDetails extends React.Component {
           <pre>
             {email.body}
           </pre>
+          {(!isReply) && <div className="invisible"></div>}
+          {isReply && <EmailReply emailBody={email.body} emailId={email.id} isReply={isReply} send={this.onSend} />}
+
           <div className="actions">
             <button onClick={this.onDeleteEmail} className="delete">Delete Email</button>
-            <button className="reply">Reply</button>
+            <button className="reply" onClick={this.onReply}>Reply</button>
             <button className="back-to-emails" onClick={this.onBack}>Back to emails</button>
           </div>
         </div>
