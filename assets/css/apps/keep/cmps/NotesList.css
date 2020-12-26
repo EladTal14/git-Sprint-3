@@ -5,7 +5,6 @@
     justify-items: center;
     margin: 10px auto;
     gap: 10px;
-    transition: display 2s;
 }
 
 .note-card{
@@ -16,6 +15,7 @@
     flex-direction: column;
     justify-content: space-around;
     margin-bottom: 5px;
+    transition: 2s;
 }
 
 .txt-note{

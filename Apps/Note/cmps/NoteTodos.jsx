@@ -79,7 +79,7 @@ export class NoteTodos extends React.Component {
           })}
         </ul>
         <div className="new-todo-add">
-          <input type="text" name="newTodo" value={newTodo} className="editble-todo" onChange={this.onChangeTodo} style={{ backgroundColor: color }} placeholder="Add a new todo!" />
+          <input type="text" name="newTodo" value={newTodo} className="editble-todo" onChange={this.onChangeTodo} style={{ backgroundColor: color }} placeholder="I need to do..." />
           <button onClick={this.onAddTodo}><img src="./assets/css/apps/mail/img/compose-btn.png" alt=""/></button>
         </div>
 
